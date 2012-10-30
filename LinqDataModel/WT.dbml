@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FwWorkTools" Class="WTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=FwWorkTools;User ID=sa" SettingsObjectName="FW.WT.LinqDataModel.Properties.Settings" SettingsPropertyName="FwWorkToolsConnectionString11" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AddressBooks" Member="AddressBooks">
+    <Type Name="AddressBook">
+      <Column Name="AddressBookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="QQ" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Area" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Menu" Member="Menus">
+    <Type Name="Menu">
+      <Column Name="MenuID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MenuName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MenuType" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ParentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsShow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OrderBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SrcCodeManage" Member="SrcCodeManages">
+    <Type Name="SrcCodeManage">
+      <Column Name="SrcCodeManageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CustomerArea" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="VSSAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ServerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServerPort" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DBName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ApplicationName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserPwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProjVersion" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\mysoft\dotnet_erp256_qddy]
+"DBName"="dotnet_erp256_qddy"
+"IsConnectSl"="0"
+"IsRead"="1"
+"SaPassword"="6.707"
+"ServerName"="mysfengw\\mssql2008"
+"ServerProt"="1433"
+"UserName"="sa"

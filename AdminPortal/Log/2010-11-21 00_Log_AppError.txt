@@ -1,0 +1,62 @@
+2010-11-21 00:52:18
+MenuBLL.GetMenuList
+System.InvalidOperationException: ConnectionString 属性尚未初始化。
+   在 System.Data.SqlClient.SqlConnection.PermissionDemand()
+   在 System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 FW.DBHelper.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, CommandType cmdType, String cmdText, SqlParameter[] cmdParms) 位置 D:\18_MyProject\TrainingManage\Source\DBHelper\SQLHelper.cs:行号 232
+   在 FW.DBHelper.SqlHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, SqlParameter[] commandParameters) 位置 D:\18_MyProject\TrainingManage\Source\DBHelper\SQLHelper.cs:行号 136
+   在 FW.TrainingManage.DAL.MenuDAL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\DAL\MenuDAL.cs:行号 34
+   在 FW.TrainingManage.BLL.MenuBLL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\BLL\MenuBLL.cs:行号 16
+
+2010-11-21 00:53:31
+MenuBLL.GetMenuList
+System.InvalidOperationException: ConnectionString 属性尚未初始化。
+   在 System.Data.SqlClient.SqlConnection.PermissionDemand()
+   在 System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   在 System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 FW.DBHelper.SqlHelper.PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, CommandType cmdType, String cmdText, SqlParameter[] cmdParms) 位置 D:\18_MyProject\TrainingManage\Source\DBHelper\SQLHelper.cs:行号 232
+   在 FW.DBHelper.SqlHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, SqlParameter[] commandParameters) 位置 D:\18_MyProject\TrainingManage\Source\DBHelper\SQLHelper.cs:行号 136
+   在 FW.TrainingManage.DAL.MenuDAL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\DAL\MenuDAL.cs:行号 34
+   在 FW.TrainingManage.BLL.MenuBLL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\BLL\MenuBLL.cs:行号 16
+
+2010-11-21 00:55:21
+MenuBLL.GetMenuList
+System.Data.SqlClient.SqlException: Could not find stored procedure 'custompage_asc'.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 FW.DBHelper.SqlHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, SqlParameter[] commandParameters) 位置 D:\18_MyProject\TrainingManage\Source\DBHelper\SQLHelper.cs:行号 136
+   在 FW.TrainingManage.DAL.MenuDAL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\DAL\MenuDAL.cs:行号 34
+   在 FW.TrainingManage.BLL.MenuBLL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\BLL\MenuBLL.cs:行号 16
+
+2010-11-21 00:56:56
+MenuBLL.GetMenuList
+System.Data.SqlClient.SqlException: Incorrect syntax near 'where'.
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   在 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 FW.DBHelper.SqlHelper.ExecuteReader(String connectionString, CommandType cmdType, String cmdText, SqlParameter[] commandParameters) 位置 D:\18_MyProject\TrainingManage\Source\DBHelper\SQLHelper.cs:行号 136
+   在 FW.TrainingManage.DAL.MenuDAL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\DAL\MenuDAL.cs:行号 34
+   在 FW.TrainingManage.BLL.MenuBLL.GetMenuList(Int32 pageSize, Int32 pageindex, String sortField, String sortOrder, String condition) 位置 D:\18_MyProject\TrainingManage\Source\BLL\MenuBLL.cs:行号 16
+

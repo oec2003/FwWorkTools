@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0"  >
+  <siteMapNode url="~/Index.aspx" title="首页" description="首页" >
+    <siteMapNode url="" title="基本信息"  description="基本信息">
+      <siteMapNode url="~/BaseInfoManage/SchoolList.aspx" title="校区管理"  description="校区管理" />
+      <siteMapNode url="~/BaseInfoManage/GradeList.aspx" title="年级管理"  description="年级管理" />
+      <siteMapNode url="~/BaseInfoManage/CourseList.aspx" title="学科设置"  description="学科设置" />
+      <siteMapNode url="~/BaseInfoManage/StudyLevelList.aspx" title="辅导类别"  description="辅导类别" />
+      <siteMapNode url="~/BaseInfoManage/CourseTimeList.aspx" title="上课时段"  description="上课时段" />
+      <siteMapNode url="~/BaseInfoManage/StudentSourceList.aspx" title="学生来源"  description="学生来源" />
+    </siteMapNode>
+
+
+    <siteMapNode url="" title="费用管理"  description="费用管理">
+
+      <siteMapNode url="" title="费用类别设置"  description="费用类别设置" />
+      <siteMapNode url="" title="费用修改"  description="费用修改" />
+      <siteMapNode url="" title="费用设置"  description="费用设置" />
+
+    </siteMapNode>
+
+  </siteMapNode>
+
+</siteMap>
