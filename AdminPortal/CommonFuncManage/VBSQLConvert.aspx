@@ -82,33 +82,32 @@
            
             margin-left: 0px;
             margin-right: 10px;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width:800px;
         }
         .divUp
         {
-            width:99%;
-                
+            width:800px;
         }
         .divDown
         {
-            width:99%;
-            
+            width:800px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
 
  <div class="divUp">
-      <asp:TextBox runat="server" ClientIDMode="Static" ID="txtUp" TextMode="MultiLine" Height="200" Width="100%"  ></asp:TextBox>
+      <asp:TextBox Wrap="false" runat="server" ClientIDMode="Static" ID="txtUp" TextMode="MultiLine" Height="200" Width="100%"  ></asp:TextBox>
  </div>
  <div class="divMid">
-      <input type="button" id="btnClear" value="清空" />
-      <input type="button" id="btnSqlToVb" value="SQL 转 VB" />
-      <input type="button" id="btnVbToSql" value="VB 转 SQL" />
+      <input type="button" id="btnClear" value="清空" style="cursor:hand;"/>
+      <input type="button" id="btnSqlToVb" value="SQL 转 VB" style="cursor:hand;"/>
+      <input type="button" id="btnVbToSql" value="VB 转 SQL" style="cursor:hand;"/>
       <%--<input type="button" id="btnCopy" value="复制" />--%>
  </div>
  <div class="divDown">
-    <asp:TextBox runat="server"  ClientIDMode="Static" ID="txtDown" TextMode="MultiLine"   Height="200" Width="100%"  ></asp:TextBox>
+    <asp:TextBox Wrap="false" runat="server"  ClientIDMode="Static" ID="txtDown" TextMode="MultiLine"   Height="200" Width="100%"  ></asp:TextBox>
  </div>
 </asp:Content>
