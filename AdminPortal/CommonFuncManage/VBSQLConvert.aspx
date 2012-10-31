@@ -109,6 +109,6 @@
       <%--<input type="button" id="btnCopy" value="复制" />--%>
  </div>
  <div class="divDown">
-    <asp:TextBox runat="server"  ClientIDMode="Static" ID="txtDown" TextMode="MultiLine" Enabled="false"  Height="200" Width="100%"  ></asp:TextBox>
+    <asp:TextBox runat="server"  ClientIDMode="Static" ID="txtDown" TextMode="MultiLine"   Height="200" Width="100%"  ></asp:TextBox>
  </div>
 </asp:Content>
