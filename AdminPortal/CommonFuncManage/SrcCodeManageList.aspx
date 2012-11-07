@@ -166,6 +166,9 @@
                 sortable: true,
                 pageable: true,
                 columnsresize: true,
+                pagesize: 25,
+                pagesizeoptions: ['10', '25', '50', '100'],
+                horizontalscrollbarstep: 5,
                 theme: theme,
                 selectionmode: 'singlerow',
                 columns: [
@@ -263,7 +266,7 @@
                       }
                   },
                   
-                  { text: 'ERP版本', datafield: 'ProjVersion', columntype: 'textbox', filtertype: 'textbox', width: 60 },
+                  { text: 'ERP版本', datafield: 'ProjVersion', columntype: 'textbox', filtertype: 'textbox', width: 80 },
                   { text: 'VSS&TFS地址', datafield: 'VSSAddress', columntype: 'textbox', filtertype: 'textbox', width: 220 },
                   { text: '数据库名', datafield: 'DBName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
                   { text: '端口', datafield: 'ServerPort', columntype: 'textbox', filtertype: 'textbox', width: 50 },
@@ -271,9 +274,18 @@
                   { text: '应用程序名', datafield: 'ApplicationName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
                   { text: '用户名', datafield: 'UserName', columntype: 'textbox', filtertype: 'textbox', width: 80 },
                   { text: '密码', datafield: 'UserPwd', columntype: 'textbox', filtertype: 'textbox', width: 80 },
-                  { text: '备注', datafield: 'Remark', columntype: 'textbox', filtertype: 'textbox', width: 150 }
+                  { text: '备注', datafield: 'Remark', columntype: 'textbox', filtertype: 'textbox'}
                 ]
             });
+
+            //隐藏列
+              $('#jqxgrid').jqxGrid('hidecolumn', 'UserName');
+              $('#jqxgrid').jqxGrid('hidecolumn', 'ApplicationName');
+              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerName');
+              $('#jqxgrid').jqxGrid('hidecolumn', 'DBName');
+              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerPort');
+              $('#jqxgrid').jqxGrid('hidecolumn', 'UserPwd');
+
 
             $("#btnAdd").jqxButton({ width: 70, theme: theme });
             $("#btnRefresh").jqxButton({ width: 70, theme: theme });
