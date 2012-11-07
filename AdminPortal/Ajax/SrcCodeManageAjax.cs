@@ -51,8 +51,8 @@ namespace FW.WT.AdminPortal.Ajax
         private string GetSrcCodeManage()
         {
             List<SrcCodeManage> list = srcCodeBll.GetSource()
-               .OrderBy(x => x.ProjVersion)
-               .ThenBy(x => x.CustomerArea)
+               .OrderBy(x => x.CustomerArea)
+               .OrderBy(x => x.CustomerName)
                .ToList();
             var json = list.ToJson<SrcCodeManage>();
             return json;

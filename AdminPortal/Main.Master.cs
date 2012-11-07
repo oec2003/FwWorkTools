@@ -66,7 +66,16 @@ namespace FW.WT.AdminPortal
                     else
                         sb.AppendLine(" <div class=\"men_03_02_01\">");
                     sb.AppendLine("     <div class=\"men_03a\"><img src=\""+ResolveUrl("images/men04.gif")+"\" width=\"11\" height=\"9\" /></div>");
-                    sb.AppendLine("     <div class=\"men_03b\"><a href=\"" + ResolveUrl(menu.Url) + "\" class=\"bk\" target=\"_self\">" + menu.MenuName + "</a></div>");
+                    if (menu.ParentID == 30)
+                    {
+                        sb.AppendLine("     <div class=\"men_03b\"><a href=\"" + ResolveUrl(menu.Url) + "\" class=\"bk\" target=\"_blank\">" + menu.MenuName + "</a></div>");
+
+                    }
+                    else
+                    {
+                        sb.AppendLine("     <div class=\"men_03b\"><a href=\"" + ResolveUrl(menu.Url) + "\" class=\"bk\" target=\"_self\">" + menu.MenuName + "</a></div>");
+
+                    }
                     sb.AppendLine(" </div>");
                     sb.AppendLine("</div>");
                 }

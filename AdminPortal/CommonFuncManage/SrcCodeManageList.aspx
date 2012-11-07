@@ -204,9 +204,9 @@
                          Boxy.confirm("确认删除吗？", function () { $('#jqxgrid').jqxGrid('deleterow', dataRecord.SrcCodeManageID, row); }, null);
                      }
                  },
-                  { text: '复制VSS地址', sortable: false, filterable: false, width: 120, columntype: 'button',
+                  { text: '复制VSS&TFS地址', sortable: false, filterable: false, width: 120, columntype: 'button',
                       cellsrenderer: function () {
-                          return "复制VSS地址";
+                          return "复制VSS&TFS地址";
                       },
                       buttonclick: function (row) {
                           //open the popup window when the user clicks a button.
@@ -253,6 +253,7 @@
                        }
                    },
                   { text: 'ID', datafield: 'SrcCodeManageID', hidden: "false", columntype: 'textbox', filtertype: 'textbox', width: 10 },
+                  { text: '区域', datafield: 'CustomerArea', columntype: 'textbox', filtertype: 'textbox', width: 80 },
                   { text: '客户名称', datafield: 'CustomerName', columntype: 'textbox', filtertype: 'textbox', width: 120,
                       validation: function (cell, value) {
                           if ($.trim(value) == "") {
@@ -261,9 +262,9 @@
                           return true;
                       }
                   },
-                  { text: '区域', datafield: 'CustomerArea', columntype: 'textbox', filtertype: 'textbox', width: 80 },
+                  
                   { text: 'ERP版本', datafield: 'ProjVersion', columntype: 'textbox', filtertype: 'textbox', width: 60 },
-                  { text: 'VSS地址', datafield: 'VSSAddress', columntype: 'textbox', filtertype: 'textbox', width: 200 },
+                  { text: 'VSS&TFS地址', datafield: 'VSSAddress', columntype: 'textbox', filtertype: 'textbox', width: 220 },
                   { text: '数据库名', datafield: 'DBName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
                   { text: '端口', datafield: 'ServerPort', columntype: 'textbox', filtertype: 'textbox', width: 50 },
                   { text: '服务器地址', datafield: 'ServerName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
