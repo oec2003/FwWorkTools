@@ -27,7 +27,6 @@
     <script type="text/javascript" src="../Scripts/jqwidgets/jqxdatetimeinput.js"></script>
     <script type="text/javascript" src="../Scripts/jqwidgets/globalization/jquery.global.js"></script>
     <script type="text/javascript" src="../Scripts/gettheme.js"></script>
-    <script type="text/javascript" src="generatedata.js"></script>
     <script type="text/javascript" src="../Scripts/json2.js"></script>
     <script type="text/javascript" src="../Scripts/boxy/jquery.boxy.js"></script>
     <link type="text/css" rel="Stylesheet" href="../Scripts/boxy/boxy.css" />
@@ -278,7 +277,7 @@
                 ]
             });
 
-            //隐藏列
+//            //隐藏列
               $('#jqxgrid').jqxGrid('hidecolumn', 'UserName');
               $('#jqxgrid').jqxGrid('hidecolumn', 'ApplicationName');
               $('#jqxgrid').jqxGrid('hidecolumn', 'ServerName');

@@ -11,8 +11,6 @@
 
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/boxy/jquery-1.4.1.js")%>"></script>
 
-    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/My97DatePicker/WdatePicker.js")%>"></script>
-
     <script type="text/javascript">
         function checkDel(obj) {
             return confirmO(obj, "您确认删除吗？");
@@ -37,7 +35,7 @@
                             window.location.href = url;
                     }
                 });
-            },2000);
+            },1000);
         }
 
         // 重定位页脚函数

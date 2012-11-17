@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using FW.CommonFunction;
 using FW.WT.LinqDataModel;
-using FW.WT.IDAL;
 using System.Linq.Expressions;
 
 
 namespace FW.WT.LinqToSqlServerDAL
 {
-    public class SrcCodeManageDAL:Repository<SrcCodeManage>,ISrcCodeManage
+    public class SrcCodeManageDAL:Repository<SrcCodeManage>
     {
         private static string _conStr = ConfigInfo.GetConfigValue("ConStr");
         private static WTDataContext<SrcCodeManage> _dataContext = new WTDataContext<SrcCodeManage>(_conStr);

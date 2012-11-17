@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using FW.CommonFunction;
 using FW.WT.LinqDataModel;
-using FW.WT.IDAL;
 using System.Linq.Expressions;
-
+using FW.WT.LinqToSqlServerDAL;
 
 namespace FW.WT.BLL
 {
     public class AddressBookBLL
     {
-        private static readonly IAddressBooks dal = DALFactory.CreateAddressBook();
+        private static readonly AddressBookDAL dal = new AddressBookDAL();
         
         public IEnumerable<AddressBook> FindAll(Expression<Func<AddressBook, bool>> exp)
         {

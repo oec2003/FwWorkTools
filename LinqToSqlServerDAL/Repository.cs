@@ -5,7 +5,7 @@ using System.Text;
 using FW.WT.LinqDataModel;
 using System.Linq.Expressions;
 
-namespace FW.WT.IDAL
+namespace FW.WT.LinqToSqlServerDAL
 {
     public class Repository<T>:IRepository<T> where T:class
     {
