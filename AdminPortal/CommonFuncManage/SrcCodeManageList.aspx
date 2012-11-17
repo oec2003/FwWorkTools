@@ -279,12 +279,12 @@
             });
 
             //隐藏列
-              $('#jqxgrid').jqxGrid('hidecolumn', 'UserName');
-              $('#jqxgrid').jqxGrid('hidecolumn', 'ApplicationName');
-              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerName');
-              $('#jqxgrid').jqxGrid('hidecolumn', 'DBName');
-              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerPort');
-              $('#jqxgrid').jqxGrid('hidecolumn', 'UserPwd');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'UserName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'ApplicationName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'DBName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerPort');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'UserPwd');
 
 
             $("#btnAdd").jqxButton({ width: 70, theme: theme });
