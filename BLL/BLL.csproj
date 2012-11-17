@@ -142,13 +142,13 @@
       <Project>{D5BC8A0B-26F8-44D4-8051-5E37421AA7B7}</Project>
       <Name>CommonFunction</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IDAL\IDAL.csproj">
-      <Project>{AF9B2A41-B972-4EE9-8F6B-1A92AD4E45EA}</Project>
-      <Name>IDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LinqDataModel\LinqDataModel.csproj">
       <Project>{90A98521-5842-4639-8738-F63D494CBC27}</Project>
       <Name>LinqDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinqToSqlServerDAL\LinqToSqlServerDAL.csproj">
+      <Project>{D4169977-D8B2-4EA1-9444-EF66E17A6F58}</Project>
+      <Name>LinqToSqlServerDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

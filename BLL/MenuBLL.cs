@@ -5,13 +5,13 @@ using System.Linq.Expressions;
 using System.Text;
 using FW.CommonFunction;
 using FW.WT.LinqDataModel;
-using FW.WT.IDAL;
+using FW.WT.LinqToSqlServerDAL;
 
 namespace FW.WT.BLL
 {
     public class MenuBLL
     {
-        private static readonly IMenu dal = DALFactory.CreateMenu();
+        private static readonly MenuDAL dal = new MenuDAL();
 
         public IEnumerable<Menu> FindAll(Expression<Func<Menu, bool>> exp)
         {

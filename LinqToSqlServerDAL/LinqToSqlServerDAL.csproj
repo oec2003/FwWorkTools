@@ -72,18 +72,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressBookDAL.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="MenuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="SrcCodeManageDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\CommonFunction.csproj">
       <Project>{D5BC8A0B-26F8-44D4-8051-5E37421AA7B7}</Project>
       <Name>CommonFunction</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IDAL\IDAL.csproj">
-      <Project>{AF9B2A41-B972-4EE9-8F6B-1A92AD4E45EA}</Project>
-      <Name>IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\LinqDataModel\LinqDataModel.csproj">
       <Project>{90A98521-5842-4639-8738-F63D494CBC27}</Project>

@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using FW.CommonFunction;
 using FW.WT.LinqDataModel;
-using FW.WT.IDAL;
 using System.Linq.Expressions;
 
 namespace FW.WT.LinqToSqlServerDAL
 {
-    public class AddressBookDAL:Repository<AddressBook>,IAddressBooks
+    public class AddressBookDAL:Repository<AddressBook>
     {
         private static string _conStr = ConfigInfo.GetConfigValue("ConStr");
         private static WTDataContext<AddressBook> _dataContext = new WTDataContext<AddressBook>(_conStr);

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using FW.CommonFunction;
 using FW.WT.LinqDataModel;
-using FW.WT.IDAL;
 using System.Linq.Expressions;
+using FW.WT.LinqToSqlServerDAL;
 
 namespace FW.WT.BLL
 {
     public class SrcCodeManageBLL
     {
-        private static readonly ISrcCodeManage dal = DALFactory.CreateSrcCodeManage();
+        private static readonly SrcCodeManageDAL dal = new SrcCodeManageDAL();
 
         public IEnumerable<SrcCodeManage> FindAll(Expression<Func<SrcCodeManage, bool>> exp)
         {
