@@ -39,6 +39,9 @@ namespace FW.WT.LinqDataModel
     partial void InsertSrcCodeManage(SrcCodeManage instance);
     partial void UpdateSrcCodeManage(SrcCodeManage instance);
     partial void DeleteSrcCodeManage(SrcCodeManage instance);
+    partial void InsertFeedBackLog(FeedBackLog instance);
+    partial void UpdateFeedBackLog(FeedBackLog instance);
+    partial void DeleteFeedBackLog(FeedBackLog instance);
     #endregion
 		
 		public WTDataContext() : 
@@ -92,6 +95,14 @@ namespace FW.WT.LinqDataModel
 			get
 			{
 				return this.GetTable<SrcCodeManage>();
+			}
+		}
+		
+		public System.Data.Linq.Table<FeedBackLog> FeedBackLogs
+		{
+			get
+			{
+				return this.GetTable<FeedBackLog>();
 			}
 		}
 	}
@@ -809,6 +820,332 @@ namespace FW.WT.LinqDataModel
 					this._ProjVersion = value;
 					this.SendPropertyChanged("ProjVersion");
 					this.OnProjVersionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.FeedBackLog")]
+	public partial class FeedBackLog : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _FeedBackLogID;
+		
+		private System.Nullable<System.DateTime> _FeedBackDate;
+		
+		private string _CstName;
+		
+		private string _TaskNo;
+		
+		private string _FeedBackContent;
+		
+		private string _CsZrr;
+		
+		private string _CsYzResult;
+		
+		private string _IsKfCl;
+		
+		private string _KfZrr;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private string _KfClDate;
+		
+		private string _Wtyy;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnFeedBackLogIDChanging(int value);
+    partial void OnFeedBackLogIDChanged();
+    partial void OnFeedBackDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnFeedBackDateChanged();
+    partial void OnCstNameChanging(string value);
+    partial void OnCstNameChanged();
+    partial void OnTaskNoChanging(string value);
+    partial void OnTaskNoChanged();
+    partial void OnFeedBackContentChanging(string value);
+    partial void OnFeedBackContentChanged();
+    partial void OnCsZrrChanging(string value);
+    partial void OnCsZrrChanged();
+    partial void OnCsYzResultChanging(string value);
+    partial void OnCsYzResultChanged();
+    partial void OnIsKfClChanging(string value);
+    partial void OnIsKfClChanged();
+    partial void OnKfZrrChanging(string value);
+    partial void OnKfZrrChanged();
+    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanged();
+    partial void OnKfClDateChanging(string value);
+    partial void OnKfClDateChanged();
+    partial void OnWtyyChanging(string value);
+    partial void OnWtyyChanged();
+    #endregion
+		
+		public FeedBackLog()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FeedBackLogID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int FeedBackLogID
+		{
+			get
+			{
+				return this._FeedBackLogID;
+			}
+			set
+			{
+				if ((this._FeedBackLogID != value))
+				{
+					this.OnFeedBackLogIDChanging(value);
+					this.SendPropertyChanging();
+					this._FeedBackLogID = value;
+					this.SendPropertyChanged("FeedBackLogID");
+					this.OnFeedBackLogIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FeedBackDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FeedBackDate
+		{
+			get
+			{
+				return this._FeedBackDate;
+			}
+			set
+			{
+				if ((this._FeedBackDate != value))
+				{
+					this.OnFeedBackDateChanging(value);
+					this.SendPropertyChanging();
+					this._FeedBackDate = value;
+					this.SendPropertyChanged("FeedBackDate");
+					this.OnFeedBackDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CstName", DbType="NVarChar(20)")]
+		public string CstName
+		{
+			get
+			{
+				return this._CstName;
+			}
+			set
+			{
+				if ((this._CstName != value))
+				{
+					this.OnCstNameChanging(value);
+					this.SendPropertyChanging();
+					this._CstName = value;
+					this.SendPropertyChanged("CstName");
+					this.OnCstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskNo", DbType="NVarChar(20)")]
+		public string TaskNo
+		{
+			get
+			{
+				return this._TaskNo;
+			}
+			set
+			{
+				if ((this._TaskNo != value))
+				{
+					this.OnTaskNoChanging(value);
+					this.SendPropertyChanging();
+					this._TaskNo = value;
+					this.SendPropertyChanged("TaskNo");
+					this.OnTaskNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FeedBackContent", DbType="NVarChar(MAX)")]
+		public string FeedBackContent
+		{
+			get
+			{
+				return this._FeedBackContent;
+			}
+			set
+			{
+				if ((this._FeedBackContent != value))
+				{
+					this.OnFeedBackContentChanging(value);
+					this.SendPropertyChanging();
+					this._FeedBackContent = value;
+					this.SendPropertyChanged("FeedBackContent");
+					this.OnFeedBackContentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CsZrr", DbType="NVarChar(20)")]
+		public string CsZrr
+		{
+			get
+			{
+				return this._CsZrr;
+			}
+			set
+			{
+				if ((this._CsZrr != value))
+				{
+					this.OnCsZrrChanging(value);
+					this.SendPropertyChanging();
+					this._CsZrr = value;
+					this.SendPropertyChanged("CsZrr");
+					this.OnCsZrrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CsYzResult", DbType="NVarChar(MAX)")]
+		public string CsYzResult
+		{
+			get
+			{
+				return this._CsYzResult;
+			}
+			set
+			{
+				if ((this._CsYzResult != value))
+				{
+					this.OnCsYzResultChanging(value);
+					this.SendPropertyChanging();
+					this._CsYzResult = value;
+					this.SendPropertyChanged("CsYzResult");
+					this.OnCsYzResultChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsKfCl", DbType="NVarChar(10)")]
+		public string IsKfCl
+		{
+			get
+			{
+				return this._IsKfCl;
+			}
+			set
+			{
+				if ((this._IsKfCl != value))
+				{
+					this.OnIsKfClChanging(value);
+					this.SendPropertyChanging();
+					this._IsKfCl = value;
+					this.SendPropertyChanged("IsKfCl");
+					this.OnIsKfClChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KfZrr", DbType="NVarChar(20)")]
+		public string KfZrr
+		{
+			get
+			{
+				return this._KfZrr;
+			}
+			set
+			{
+				if ((this._KfZrr != value))
+				{
+					this.OnKfZrrChanging(value);
+					this.SendPropertyChanging();
+					this._KfZrr = value;
+					this.SendPropertyChanged("KfZrr");
+					this.OnKfZrrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this.OnEndDateChanging(value);
+					this.SendPropertyChanging();
+					this._EndDate = value;
+					this.SendPropertyChanged("EndDate");
+					this.OnEndDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KfClDate", DbType="NVarChar(10)")]
+		public string KfClDate
+		{
+			get
+			{
+				return this._KfClDate;
+			}
+			set
+			{
+				if ((this._KfClDate != value))
+				{
+					this.OnKfClDateChanging(value);
+					this.SendPropertyChanging();
+					this._KfClDate = value;
+					this.SendPropertyChanged("KfClDate");
+					this.OnKfClDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Wtyy", DbType="NVarChar(MAX)")]
+		public string Wtyy
+		{
+			get
+			{
+				return this._Wtyy;
+			}
+			set
+			{
+				if ((this._Wtyy != value))
+				{
+					this.OnWtyyChanging(value);
+					this.SendPropertyChanging();
+					this._Wtyy = value;
+					this.SendPropertyChanged("Wtyy");
+					this.OnWtyyChanged();
 				}
 			}
 		}

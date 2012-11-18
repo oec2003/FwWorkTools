@@ -38,4 +38,20 @@
       <Column Name="ProjVersion" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.FeedBackLog" Member="FeedBackLogs">
+    <Type Name="FeedBackLog">
+      <Column Name="FeedBackLogID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FeedBackDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CstName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TaskNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FeedBackContent" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CsZrr" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CsYzResult" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsKfCl" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="KfZrr" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KfClDate" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Wtyy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

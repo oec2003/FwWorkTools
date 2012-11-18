@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressBookDAL.cs" />
+    <Compile Include="FeedBackLogDAL.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="MenuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
