@@ -14,10 +14,16 @@
         <elementListCompartment Id="8a320084-22a8-42f5-bfd8-966602be2c59" absoluteBounds="0.515, 3.71, 1.9700000000000002, 1.7756245930989585" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7dbfb701-0b38-47dd-ac39-439d4d6981dc" absoluteBounds="2.875, 1.25, 2, 3.0997033691406251">
+    <classShape Id="7dbfb701-0b38-47dd-ac39-439d4d6981dc" absoluteBounds="2.75, 0.5, 2, 3.0997033691406251">
       <DataClassMoniker Name="/WTDataContext/SrcCodeManage" />
       <nestedChildShapes>
-        <elementListCompartment Id="2b7a2ffb-8473-4f2e-b01a-4f4b3ea3a961" absoluteBounds="2.89, 1.71, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2b7a2ffb-8473-4f2e-b01a-4f4b3ea3a961" absoluteBounds="2.765, 0.96, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="99d054e2-c6b4-474a-96e2-a2ce72e249b5" absoluteBounds="3, 4.125, 2, 3.0997033691406251">
+      <DataClassMoniker Name="/WTDataContext/FeedBackLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="620995f2-ee40-42cd-ba58-47442f2efb9b" absoluteBounds="3.015, 4.585, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

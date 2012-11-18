@@ -72,6 +72,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -91,22 +95,181 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CommonFuncManage\AddressBooksList.aspx" />
-    <Content Include="CommonFuncManage\generatedata.js" />
+    <Content Include="CommonFuncManage\FeedBackLogList.aspx" />
     <Content Include="CommonFuncManage\SrcCodeManageList.aspx" />
     <Content Include="CommonFuncManage\VBSQLConvert.aspx" />
     <Content Include="DownLoadFile.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Lib\Newtonsoft.Json.dll" />
     <Content Include="Scripts\boxy\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\demofunctions.js" />
     <Content Include="Scripts\demofunctions_old-08-24-2012.js" />
     <Content Include="Scripts\format.js" />
     <Content Include="Scripts\gettheme.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Scripts\jquery-1.7.2.min.js" />
-    <Content Include="Scripts\jquery-1.8.0.min.js" />
     <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jqueryeasyui\easyloader.js" />
+    <Content Include="Scripts\jqueryeasyui\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jqueryeasyui\jquery.easyui.min.js" />
+    <Content Include="Scripts\jqueryeasyui\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.accordion.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.calendar.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combo.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combobox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combogrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combotree.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.datagrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.datebox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.datetimebox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.dialog.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.draggable.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.droppable.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.form.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.layout.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.linkbutton.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.menu.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.menubutton.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.messager.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.numberbox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.numberspinner.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.pagination.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.panel.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.parser.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.progressbar.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.propertygrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.resizable.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.searchbox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.slider.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.spinner.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.splitbutton.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.tabs.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.timespinner.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.tree.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.treegrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.validatebox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.window.js" />
+    <Content Include="Scripts\jqueryeasyui\src\easyloader.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.accordion.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.calendar.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.combobox.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.datebox.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.draggable.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.droppable.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.form.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.linkbutton.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.menu.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.parser.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.progressbar.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.propertygrid.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.resizable.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.slider.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.tabs.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.window.js" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\accordion.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\calendar.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\combo.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\combobox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\datagrid.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\datebox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\dialog.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\easyui.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\accordion_collapse.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\accordion_expand.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\blank.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\button_a_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\button_plain_hover.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\button_span_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_nextmonth.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_nextyear.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_prevmonth.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_prevyear.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\combo_arrow.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_header_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_row_collapse.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_row_expand.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_sort_asc.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_sort_desc.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_title_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\layout_arrows.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_downarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_rightarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_sep.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_split_downarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_error.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_info.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_question.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_warning.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_first.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_last.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_load.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_loading.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_next.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_prev.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\panel_loading.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\panel_title.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\panel_tools.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\searchbox_button.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\slider_handle.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\spinner_arrow_down.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\spinner_arrow_up.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_close.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_enabled.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_leftarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_rightarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_arrows.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_checkbox_0.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_checkbox_1.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_checkbox_2.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_dnd_no.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_dnd_yes.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_elbow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_file.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_folder.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_folder_open.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_loading.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\validatebox_pointer.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\layout.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\linkbutton.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\menu.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\menubutton.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\messager.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\pagination.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\panel.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\progressbar.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\propertygrid.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\searchbox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\slider.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\spinner.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\splitbutton.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\tabs.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\tree.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\validatebox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\window.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\icon.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\back.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\blank.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\cancel.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\cut.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\edit_add.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\edit_remove.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\filesave.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\help.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\mini_add.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\mini_edit.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\mini_refresh.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\no.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\ok.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\pencil.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\print.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\redo.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\reload.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\search.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\sum.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\tip.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\undo.png" />
     <Content Include="Scripts\jqwidgets\globalization\jquery.glob.cs-CZ.js" />
     <Content Include="Scripts\jqwidgets\globalization\jquery.glob.de-DE.js" />
     <Content Include="Scripts\jqwidgets\globalization\jquery.glob.en-CA.js" />
@@ -396,6 +559,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ajax\FeedBackLogAjax.ashx.cs">
+      <DependentUpon>FeedBackLogAjax.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ajax\SrcCodeManageAjax.cs" />
     <Compile Include="Ajax\VBSQLConvertAjax.cs" />
     <Compile Include="CommonFuncManage\AddressBooksList.aspx.cs">
@@ -404,6 +570,13 @@
     </Compile>
     <Compile Include="CommonFuncManage\AddressBooksList.aspx.designer.cs">
       <DependentUpon>AddressBooksList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\FeedBackLogList.aspx.cs">
+      <DependentUpon>FeedBackLogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\FeedBackLogList.aspx.designer.cs">
+      <DependentUpon>FeedBackLogList.aspx</DependentUpon>
     </Compile>
     <Compile Include="CommonFuncManage\SrcCodeManageList.aspx.cs">
       <DependentUpon>SrcCodeManageList.aspx</DependentUpon>
@@ -422,6 +595,7 @@
     <Compile Include="Common\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Common\JsonConvert.cs" />
     <Compile Include="Common\LoginInfo.cs" />
     <Compile Include="Common\QueryBasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -639,6 +813,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajax\FeedBackLogAjax.ashx" />
+    <None Include="Scripts\jqueryeasyui\themes\gray\images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

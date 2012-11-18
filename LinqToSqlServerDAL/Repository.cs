@@ -14,12 +14,16 @@ namespace FW.WT.LinqToSqlServerDAL
         public Repository(WTDataContext<T> dataContext)
         {
             this._dataContext = dataContext;
-           
         }
 
         public IEnumerable<T> FindAll(int pageSize,int pageIndex,Expression<Func<T,bool>> exp)
         {
             return _dataContext.GetTable<T>().Where(exp).Skip((pageIndex-1)*pageSize).Take(pageSize);
+        }
+
+        public IEnumerable<T> FindAll(int pageSize, int pageIndex)
+        {
+            return _dataContext.GetTable<T>().Skip((pageIndex - 1) * pageSize).Take(pageSize);
         }
 
         public IEnumerable<T> FindAll(Expression<Func<T, bool>> exp)
