@@ -1,13 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true"  ViewStateMode="Disabled"
     CodeBehind="FeedBackLogList.aspx.cs" Inherits="FW.WT.AdminPortal.CommonFuncManage.FeedBackLogList" %>
  <%@ MasterType VirtualPath="~/Main.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="../Scripts/jqueryeasyui/themes/gray/easyui.css" />
     <link rel="stylesheet" type="text/css" href="../Scripts/jqueryeasyui/themes/icon.css" />
-    <script type="text/javascript" src="../Scripts/jqueryeasyui/jquery-1.8.0.min.js"></script>
-    <script type="text/javascript" src="../Scripts/jqueryeasyui/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="../Scripts/jqueryeasyui/locale/easyui-lang-zh_CN.js"></script>
-    <script type="text/javascript" src=""></script>
+
     <script type="text/javascript">
         $(function () {
             $('#dg').datagrid({

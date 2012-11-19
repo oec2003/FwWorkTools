@@ -6,43 +6,16 @@
 <head runat="server">
     <title>工作辅助工具</title>
     <link rel="stylesheet" href="Styles/style.css" type="text/css" />
-
-    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/Common.js")%>"></script>
-
-    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/boxy/jquery-1.4.1.js")%>"></script>
-
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jqueryeasyui/jquery-1.8.0.min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jqueryeasyui/jquery.easyui.min.js")%>"></script>
+    <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jqueryeasyui/locale/easyui-lang-zh_CN.js")%>"></script>
     <script type="text/javascript">
-        function checkDel(obj) {
-            return confirmO(obj, "您确认删除吗？");
-        }
-
-        function operatorSuccess(msg, url) {
-            $.blockUI({ message: msg,
-                css: {
-                    border: 'none',
-                    padding: '15px',
-                    backgroundColor: '#000',
-                    '-webkit-border-radius': '10px',
-                    '-moz-border-radius': '10px',
-                    opacity: .5,
-                    color: '#fff'
-                }
-            });
-            setTimeout(function() {
-                $.unblockUI({
-                    onUnblock: function() {
-                        if (url != "")
-                            window.location.href = url;
-                    }
-                });
-            },1000);
-        }
-
+      
         // 重定位页脚函数
         function repositionFooter() {
             var h = $(window).height();
            
-            $("#tdMenu").attr('height', h - 100)
+            $("#tdMenu").attr('height', h - 120)
         };
 
         // 用户调整窗口大小时重定位页脚
@@ -65,7 +38,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
     <div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr align="left">
@@ -95,6 +67,5 @@
             </tr>
         </table>
     </div>
-    </form>
 </body>
 </html>

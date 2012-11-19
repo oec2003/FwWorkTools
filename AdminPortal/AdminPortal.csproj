@@ -562,6 +562,9 @@
     <Compile Include="Ajax\FeedBackLogAjax.ashx.cs">
       <DependentUpon>FeedBackLogAjax.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Ajax\SrcCodeManageAjax.ashx.cs">
+      <DependentUpon>SrcCodeManageAjax.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ajax\SrcCodeManageAjax.cs" />
     <Compile Include="Ajax\VBSQLConvertAjax.cs" />
     <Compile Include="CommonFuncManage\AddressBooksList.aspx.cs">
@@ -816,6 +819,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ajax\FeedBackLogAjax.ashx" />
+    <Content Include="Ajax\SrcCodeManageAjax.ashx" />
     <None Include="Scripts\jqueryeasyui\themes\gray\images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
