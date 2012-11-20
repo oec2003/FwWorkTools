@@ -110,8 +110,11 @@ namespace FW.WT.BLL
             try
             {
                 var srcCode = dal.FindByID(id);
-                dal.Delete(srcCode);
-                dal.Save();
+                if (srcCode != null)
+                {
+                    dal.Delete(srcCode);
+                    dal.Save();
+                }
             }
             catch (Exception ex)
             {

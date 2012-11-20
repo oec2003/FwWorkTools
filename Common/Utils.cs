@@ -31,6 +31,14 @@ using Label=System.Web.UI.WebControls.Label;
 
 namespace FW.CommonFunction
 {
+    public enum FlagEnum
+    {
+        Success,
+        Fail,
+        Error
+    }
+
+
     /// <summary>
     /// 工具类
     /// </summary>

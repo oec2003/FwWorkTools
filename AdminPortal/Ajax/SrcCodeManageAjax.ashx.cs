@@ -95,45 +95,52 @@ namespace FW.WT.AdminPortal.Ajax
         {
             try
             {
-                SrcCodeManage srcCode;
-                if (_request["Mode"] == "1")
+                SrcCodeManage srcCode=null;
+                string mode = CommonRequest.GetQueryString("Mode");
+                int id = CommonRequest.GetQueryInt("ID", 0);
+
+                if (mode == "1")
                 {
                     srcCode = new SrcCodeManage();
                 }
-                else
+                else if (mode == "2")
                 {
-                    srcCode = _srcCodeBll.FindByID(_request["ID"].ToInt32(0));
+                    srcCode = _srcCodeBll.FindByID(id);
                 }
+               
                 if (srcCode != null)
                 {
-                    srcCode.CustomerName = _request["KfZrr"];
-                    srcCode.CustomerArea = _request["KfZrr"];
-                    srcCode.ProjVersion = _request["KfZrr"];
-                    srcCode.VSSAddress = _request["KfZrr"];
-                    srcCode.DBName = _request["KfZrr"];
-                    srcCode.ServerPort = _request["KfZrr"];
-                    srcCode.ServerName = _request["KfZrr"];
-                    srcCode.ApplicationName = _request["KfZrr"];
-                    srcCode.UserName = _request["KfZrr"];
-                    srcCode.UserPwd = _request["KfZrr"];
-                    srcCode.Remark = _request["KfZrr"];
-                    _srcCodeBll.Add(srcCode);
+                    srcCode.CustomerName = _request["CustomerName"];
+                    srcCode.CustomerArea = _request["CustomerArea"];
+                    srcCode.ProjVersion = _request["ProjVersion"];
+                    srcCode.VSSAddress = _request["VSSAddress"];
+                    srcCode.DBName = _request["DBName"];
+                    srcCode.ServerPort = _request["ServerPort"];
+                    srcCode.ServerName = _request["ServerName"];
+                    srcCode.ApplicationName = _request["ApplicationName"];
+                    srcCode.UserName = _request["UserName"];
+                    srcCode.UserPwd = _request["UserPwd"];
+                    srcCode.Remark = _request["Remark"];
                 }
-                if (_request["Mode"] == "1")
+                if (mode == "1")
                 {
                     _srcCodeBll.Add(srcCode);
-                    _response.Write(_jc.ToStatus(1));
+                    _response.Write(FlagEnum.Success);
+                }
+                else if (mode == "2")
+                {
+                    _srcCodeBll.Update(srcCode);
+                    _response.Write(FlagEnum.Success);
                 }
                 else
                 {
-                    _srcCodeBll.Update(srcCode);
-                    _response.Write(_jc.ToStatus(1));
+                    _response.Write(FlagEnum.Error);
                 }
             }
             catch (Exception ex)
             {
                 ErrorHandler.ExceptionHandlerForWeb("SrcCodeManageAjax.SaveSrcCodeManage", ex.ToString());
-                _response.Write(_jc.ToStatus(0));
+                _response.Write(FlagEnum.Error);
             }
         }
 
@@ -149,18 +156,18 @@ namespace FW.WT.AdminPortal.Ajax
                     {
                         _srcCodeBll.Delete(id.ToInt32(0));
                     }
-                    _response.Write(_jc.ToStatus(1));
+                    _response.Write(FlagEnum.Success);
                 }
             }
             catch (Exception ex)
             {
-                ErrorHandler.ExceptionHandlerForWeb("FeedBackLogAjax.DelSrcCodeManage", ex.ToString());
-                _response.Write(_jc.ToStatus(0));
+                ErrorHandler.ExceptionHandlerForWeb("SrcCodeManageAjax.DelSrcCodeManage", ex.ToString());
+                _response.Write(FlagEnum.Error);
             }
 
         }
 
-        private string IsExistName()
+        public void IsExistName()
         {
             try
             {
@@ -177,15 +184,62 @@ namespace FW.WT.AdminPortal.Ajax
                 int count = _srcCodeBll.GetCount(condition);
                 if (count > 0)
                 {
-                    return "NO";
+                    _response.Write(_jc.ToStatus(1));
+                }
+                else
+                {
+                    _response.Write(_jc.ToStatus(0));
                 }
             }
             catch (Exception ex)
             {
                 ErrorHandler.ExceptionHandlerForWeb("SrcCodeManageAjax.IsExistName", ex.ToString());
-                return "ERROR";
+                _response.Write(_jc.ToStatus(-1));
             }
-            return "OK";
+
+        }
+
+        public void RegisterAndDownLoadReg()
+        {
+            try
+            {
+                string dbName = _request["dbName"];
+                string appName = _request["appName"];
+                string serverName = _request["serverName"];
+                string userName = _request["userName"];
+                string saPassword = _request["saPassword"];
+                string serverProt = _request["serverProt"];
+                string customerName = _request["customerName"];
+                string subkey = @"software\mysoft\" + appName;
+                string fullRegPath = @"[HKEY_LOCAL_MACHINE\SOFTWARE\mysoft\" + appName + "]";
+                string regName = customerName + ".reg";
+
+                saPassword = Cryptogram.EnCode(saPassword);
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Windows Registry Editor Version 5.00");
+                sb.AppendLine(fullRegPath);
+                sb.AppendLine("\"DBName\"=\"" + dbName + "\"");
+                sb.AppendLine("\"IsConnectSl\"=\"0\"");
+                sb.AppendLine("\"IsRead\"=\"1\"");
+                sb.AppendLine("\"SaPassword\"=\"" + saPassword + "\"");
+                sb.AppendLine("\"ServerName\"=\"" + serverName.Replace(@"\", @"\\") + "\"");
+                sb.AppendLine("\"ServerProt\"=\"" + serverProt + "\"");
+                sb.AppendLine("\"UserName\"=\"" + userName + "\"");
+
+                string filePath = System.Threading.Thread.GetDomain().BaseDirectory + "RegFile\\"; ;
+                FileHelper fileHelper = new FileHelper(regName, filePath, regName);
+                fileHelper.DeleteFile();
+                fileHelper.WriteFile(sb.ToString());
+                // fileHelper.DownFile(Response);
+
+                _response.Write(filePath + "|" + regName);
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.ExceptionHandlerForWeb("SrcCodeManageAjax.RegisterAndDownLoadReg", ex.ToString());
+                _response.Write(FlagEnum.Error);
+            }
         }
     }
 }

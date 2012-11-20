@@ -565,7 +565,6 @@
     <Compile Include="Ajax\SrcCodeManageAjax.ashx.cs">
       <DependentUpon>SrcCodeManageAjax.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Ajax\SrcCodeManageAjax.cs" />
     <Compile Include="Ajax\VBSQLConvertAjax.cs" />
     <Compile Include="CommonFuncManage\AddressBooksList.aspx.cs">
       <DependentUpon>AddressBooksList.aspx</DependentUpon>

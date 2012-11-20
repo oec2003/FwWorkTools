@@ -46,7 +46,7 @@
                 pagination: true,
                 pageNumber: 1,
                 rownumbers: true,
-                toolbar:'#tb',
+                toolbar: '#tb',
                 onLoadSuccess: function () {
                     //$("#roleManageGrid").datagrid('reload');
                 },
@@ -57,11 +57,13 @@
                     // RoleId = roleId;
                 }
             });
+
+            $("#tb").show();
         });
 
-        function openDialog(mode,id) {
+        function openDialog(mode, id) {
             $("#dialogAddFeedBack").show();
-            $("#dialogAddFeedBack").attr("title", "添加反馈");
+            $("#dialogAddFeedBack").attr("title", mode == 1 ? "添加" : "编辑");
             $("#dialogAddFeedBack").dialog({
                 width: 520,
                 height: 600,
@@ -71,21 +73,22 @@
                 buttons:
                     [
                         {
-                            text: '提交',
+                            text: '保存',
                             iconCls: 'icon-ok',
                             handler: function () {
-                                saveFeedBackLog(mode,id);
+                                saveFeedBackLog(mode, id);
                             }
                         },
 				        {
 				            text: '取消',
+				            iconCls: 'icon-no',
 				            handler: function () {
 				                $('#dialogAddFeedBack').dialog('close');
 				            }
 				        }
 				    ]
             });
-				}
+        }
 
 		function searchFB() {
 			$('#dg').datagrid('load', {
@@ -336,7 +339,7 @@
     </form>
    
    <!--工具栏-->
-    <div id="tb" style="padding:5px;height:auto">  
+    <div id="tb" style="padding:5px;height:auto;display:none;">  
         <div style="margin-bottom:5px">  
             <a href="#" class="easyui-linkbutton" iconCls="icon-add"  onclick="add()">新增</a>  
             <a href="#" class="easyui-linkbutton" iconCls="icon-edit"  onclick="edit()">编辑</a>   
