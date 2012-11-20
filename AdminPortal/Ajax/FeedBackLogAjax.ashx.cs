@@ -65,7 +65,6 @@ namespace FW.WT.AdminPortal.Ajax
             Expression<Func<FeedBackLog, bool>> exp = GetCondition();
             List<FeedBackLog> list = _feedBackLogBll.FindAll(_rows, _page, exp).ToList();
             int count = _feedBackLogBll.GetCount(exp);
-            var json = list.ToJson<FeedBackLog>();
             JsonConvert<FeedBackLog> jc = new JsonConvert<FeedBackLog>();
             _response.Write(jc.ToDataGrid(list, count));
         }
@@ -117,7 +116,6 @@ namespace FW.WT.AdminPortal.Ajax
                 }
                 else
                 {
-                    fb.FeedBackLogID = _request["ID"].ToInt32(0);
                     _feedBackLogBll.Update(fb);
                     _response.Write(jc.ToStatus(1));
                 }

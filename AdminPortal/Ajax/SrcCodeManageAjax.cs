@@ -13,7 +13,7 @@ using System.IO;
 
 namespace FW.WT.AdminPortal.Ajax
 {
-    public class SrcCodeManageAjax:AjaxHandler 
+    public class SrcCodeManageAjax11:AjaxHandler 
     {
         SrcCodeManageBLL srcCodeBll = new SrcCodeManageBLL();
 
