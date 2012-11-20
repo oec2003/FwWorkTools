@@ -76,7 +76,6 @@
                 var row = $('#dg').datagrid('getSelected'); 
                 $('#dlg').dialog('open').dialog('setTitle', '编辑');
                 $('#fm').form('load', row);
-                _srcCodeManageID=row.SrcCodeManageID;
                 url = "../Ajax/SrcCodeManageAjax.ashx?Method=SaveSrcCodeManage&id=" + row.SrcCodeManageID;
             }
         }
@@ -98,7 +97,7 @@
                             type: "POST",
                             dataType: "json",
                             //cache:true,
-                            url: "../Ajax/SrcCodeManageAjax.ashx?Method=DelFeedBackLog",
+                            url: "../Ajax/FeedBackLogAjax.ashx?Method=DelFeedBackLog",
                             data: { IDs: ids },
                             success: function (data) {
                                 if (data.Flag[0].Status == 1) {
@@ -117,23 +116,164 @@
                     }
                 });
             }
+<<<<<<< HEAD
+            var editrow = -1;
+            var dataS = getAdapter();
+            $("#jqxgrid").jqxGrid(
+            {
+                width: "99%",
+                autoheight: true,
+                source: dataS,
+                showfilterrow: true,
+                filterable: true,
+                sortable: true,
+                pageable: true,
+                columnsresize: true,
+                pagesize: 25,
+                pagesizeoptions: ['10', '25', '50', '100'],
+                horizontalscrollbarstep: 5,
+                theme: theme,
+                selectionmode: 'singlerow',
+                columns: [
+                 { text: '修改', sortable: false, filterable: false, columntype: 'button', width: 70,
+                     cellsrenderer: function () { return "修改"; },
+                     buttonclick: function (row) {
+                         // open the popup window when the user clicks a button.
+                         editrow = row;
+                         var offset = $("#jqxgrid").offset();
+                         $("#popupWindow").jqxWindow({ position: { x: parseInt(offset.left) + 60, y: parseInt(offset.top) + 60} });
+                         // get the clicked row's data and initialize the input fields.
+                         var dataRecord = $("#jqxgrid").jqxGrid('getrowdata', editrow);
+                         $("#txtCustomerName").val(dataRecord.CustomerName);
+                         $("#txtCustomerArea").val(dataRecord.CustomerArea);
+                         $("#txtProjVersion").val(dataRecord.ProjVersion);
+                         $("#txtVSSAddress").val(dataRecord.VSSAddress);
+                         $("#txtDBName").val(dataRecord.DBName);
+                         $("#txtServerPort").val(dataRecord.ServerPort);
+                         $("#txtServerName").val(dataRecord.ServerName);
+                         $("#txtApplicationName").val(dataRecord.ApplicationName);
+                         $("#txtUserName").val(dataRecord.UserName);
+                         $("#txtUserPwd").val(dataRecord.UserPwd);
+                         $("#txtRemark").val(dataRecord.Remark);
+                         _mode = 2;
+                         _srcCodeManageID = dataRecord.SrcCodeManageID;
+                         // show the popup window.
+                         $("#popupWindow").jqxWindow('show');
+                     }
+                 },
+                 { text: '删除', sortable: false, filterable: false, columntype: 'button', width: 70,
+                     cellsrenderer: function () { return "删除"; },
+                     buttonclick: function (row) {
+                         // open the popup window when the user clicks a button.
+                         var dataRecord = $("#jqxgrid").jqxGrid('getrowdata', row);
+
+                         Boxy.confirm("确认删除吗？", function () { $('#jqxgrid').jqxGrid('deleterow', dataRecord.SrcCodeManageID, row); }, null);
+                     }
+                 },
+                  { text: '复制VSS&TFS地址', sortable: false, filterable: false, width: 120, columntype: 'button',
+                      cellsrenderer: function () {
+                          return "复制VSS&TFS地址";
+                      },
+                      buttonclick: function (row) {
+                          //open the popup window when the user clicks a button.
+                          var dataRecord = $("#jqxgrid").jqxGrid('getrowdata', row);
+                          //window.clipboardData.setData('text', dataRecord.VSSAddress);
+                          copy(dataRecord.VSSAddress);
+                          // operatorSuccess("复制成功！", "");
+
+                      }
+                  },
+                   { text: '下载Reg', sortable: false, filterable: false, width: 100, columntype: 'button',
+                       cellsrenderer: function () { return "下载Reg"; },
+                       buttonclick: function (row) {
+                           //debugger;
+                           var dataRecord = $("#jqxgrid").jqxGrid('getrowdata', row);
+                           var jsonData = dataRecord.DBName + "|" + dataRecord.ApplicationName + "|" + dataRecord.ServerName + "|" +
+                            dataRecord.UserName + "|" + dataRecord.UserPwd + "|" + dataRecord.ServerPort + "|" + dataRecord.CustomerName;
+                           $.ajax({
+                               type: 'POST',
+                               async: false,
+                               url: _url,
+                               data: { action: 'RegisterAndDownLoadReg', JsonData: jsonData, rnd: Math.random() },
+                               success: function (data) {
+                                   //debugger;
+                                   if (data == "ERROR") {
+                                       operatorSuccess("注册&下载失败！", "");
+                                   }
+                                   else if (data == "OK") {
+                                       //operatorSuccess("注册&下载成功！", "");
+                                   }
+                                   else {
+                                       //operatorSuccess(data, "");
+
+                                       if (data.split("|").length == 2) {
+                                           var filePath = data.split("|")[0];
+                                           var fileName = data.split("|")[1];
+
+                                           downReg(filePath, fileName);
+                                       }
+
+                                   }
+                               }
+                           });
+                       }
+                   },
+                  { text: 'ID', datafield: 'SrcCodeManageID', hidden: "false", columntype: 'textbox', filtertype: 'textbox', width: 10 },
+                  { text: '区域', datafield: 'CustomerArea', columntype: 'textbox', filtertype: 'textbox', width: 80 },
+                  { text: '客户名称', datafield: 'CustomerName', columntype: 'textbox', filtertype: 'textbox', width: 120,
+                      validation: function (cell, value) {
+                          if ($.trim(value) == "") {
+                              return { result: false, message: "客户名称不能为空！" };
+                          }
+                          return true;
+                      }
+                  },
+                  
+                  { text: 'ERP版本', datafield: 'ProjVersion', columntype: 'textbox', filtertype: 'textbox', width: 80 },
+                  { text: 'VSS&TFS地址', datafield: 'VSSAddress', columntype: 'textbox', filtertype: 'textbox', width: 220 },
+                  { text: '数据库名', datafield: 'DBName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
+                  { text: '端口', datafield: 'ServerPort', columntype: 'textbox', filtertype: 'textbox', width: 50 },
+                  { text: '服务器地址', datafield: 'ServerName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
+                  { text: '应用程序名', datafield: 'ApplicationName', columntype: 'textbox', filtertype: 'textbox', width: 120 },
+                  { text: '用户名', datafield: 'UserName', columntype: 'textbox', filtertype: 'textbox', width: 80 },
+                  { text: '密码', datafield: 'UserPwd', columntype: 'textbox', filtertype: 'textbox', width: 80 },
+                  { text: '备注', datafield: 'Remark', columntype: 'textbox', filtertype: 'textbox'}
+                ]
+            });
+
+//            //隐藏列
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'UserName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'ApplicationName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'DBName');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'ServerPort');
+//              $('#jqxgrid').jqxGrid('hidecolumn', 'UserPwd');
+
+
+            $("#btnAdd").jqxButton({ width: 70, theme: theme });
+            $("#btnRefresh").jqxButton({ width: 70, theme: theme });
+
+            $("#btnAdd").click(function () {
+                clearInput();
+                _mode = 1;
+                var offset = $("#jqxgrid").offset();
+                $("#popupWindow").jqxWindow({ position: { x: parseInt(offset.left) + 60, y: parseInt(offset.top) + 60} });
+                $("#popupWindow").jqxWindow('show');
+            });
+
+            $("#btnRefresh").click(function (event) {
+                refreshGrid();
+            });
+=======
         }
+>>>>>>> 3d4a85ce1e17a7c9338b1aec6c325787bce56696
 
         //保存
         function saveSrc(mode, id) {
             $('#fm').form('submit', {
                 url: url,
                 onSubmit: function () {
-                    if ($(this).form('validate')) {
-                        if (checkCstName()) {
-                            $.messager.alert('提示', '客户名称已经存在!');
-                            return false;
-                        }
-                    }
-                    else {
-                        return false;
-                    }
-
+                    return $(this).form('validate');
                 },
                 success: function (result) {
                     debugger;
@@ -151,28 +291,6 @@
             });  
         }
 
-        function checkCstName() {debugger;
-            var tag = false;
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: "../Ajax/SrcCodeManageAjax.ashx?Method=IsExistName",
-                data: { id: _srcCodeManageID, Mode: _mode, CstName: $("#CustomerName").val() },
-                success: function (data) {
-                    debugger;
-                    if (data.Flag[0].Status == 1) {
-                        $.messager.alert('提示', '删除成功');
-                        $("#dg").datagrid('reload');
-                    }
-                    else {
-                        $.messager.alert('错误', '删除失败!', 'error');
-                    }
-                },
-                error: function () {
-                }
-            });
-        }
-
         function downReg() {
 
         }
@@ -184,6 +302,10 @@
         function searchSrcCode() {
 
         }
+
+
+
+       
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
@@ -199,7 +321,7 @@
                     客户名称:
                 </td>
                 <td align="left">
-                    <input id="CustomerName" name="CustomerName" maxlength="20" style="width: 150px;" class="easyui-validatebox" required="true" />
+                    <input name="CustomerName" maxlength="20" style="width: 150px;" class="easyui-validatebox" required="true" />
                 </td>
                 <td align="right" style="width: 80px;">
                     区域:

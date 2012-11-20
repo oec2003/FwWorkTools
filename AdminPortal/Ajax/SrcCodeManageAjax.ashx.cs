@@ -159,5 +159,33 @@ namespace FW.WT.AdminPortal.Ajax
             }
 
         }
+
+        private string IsExistName()
+        {
+            try
+            {
+                string mode = CommonRequest.GetFormString("Mode");
+                string cstName = CommonRequest.GetFormString("CstName");
+                int id = CommonRequest.GetFormInt("id",0);
+                var exp = DynamicLinqExpressions.True<SrcCodeManage>();
+                exp = exp.And(g => g.CustomerName.ToUpper() == cstName.ToUpper());
+                if (mode == "2")
+                {
+                    exp = exp.And(g => g.SrcCodeManageID != id);
+                }
+                Expression<Func<SrcCodeManage, bool>> condition = exp;
+                int count = _srcCodeBll.GetCount(condition);
+                if (count > 0)
+                {
+                    return "NO";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.ExceptionHandlerForWeb("SrcCodeManageAjax.IsExistName", ex.ToString());
+                return "ERROR";
+            }
+            return "OK";
+        }
     }
 }
