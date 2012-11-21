@@ -97,7 +97,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-
+<form id="form1" runat="server">
  <div class="divUp">
       <asp:TextBox Wrap="false" runat="server" ClientIDMode="Static" ID="txtUp" TextMode="MultiLine" Height="200" Width="100%"  ></asp:TextBox>
  </div>
@@ -110,4 +110,6 @@
  <div class="divDown">
     <asp:TextBox Wrap="false" runat="server"  ClientIDMode="Static" ID="txtDown" TextMode="MultiLine"   Height="200" Width="100%"  ></asp:TextBox>
  </div>
+</form>
+
 </asp:Content>

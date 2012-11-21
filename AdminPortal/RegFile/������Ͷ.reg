@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\mysoft\dotnet_erp257sp1_cqlt]
+"DBName"="10.5.11.8\sql2005"
+"IsConnectSl"="0"
+"IsRead"="1"
+"SaPassword"="6.707"
+"ServerName"="10.5.11.8\\sql2005"
+"ServerProt"="1433"
+"UserName"="sa"

@@ -62,11 +62,15 @@
         });
 
         function openDialog(mode, id) {
+            var title = "添加";
+            if (mode == "2") {
+                title = "编辑";
+            }
             $("#dialogAddFeedBack").show();
-            $("#dialogAddFeedBack").attr("title", mode == 1 ? "添加" : "编辑");
+            $("#dialogAddFeedBack").attr("title", title);
             $("#dialogAddFeedBack").dialog({
                 width: 520,
-                height: 600,
+                height: 620,
                 draggable: true,
                 resizable: false,
                 modal: true,

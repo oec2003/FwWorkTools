@@ -11,7 +11,7 @@
         var _mode;
         $(function () {
             $('#dg').datagrid({
-                title: '一线反馈记录列表',
+                title: '源码地址管理列表',
                 //iconCls: 'icon-save',
                 collapsible: false,
                 fitColumns: false,
@@ -65,8 +65,28 @@
             //$('#dlg').dialog('open').dialog('setTitle', '新增');
             openDialog();
             $('#fm').form('clear');
-           
-            url = "../Ajax/SrcCodeManageAjax.ashx?Method=SaveSrcCodeManage&Mode="+_mode; 
+            $("#ServerPort").val("1433");
+            $("#UserName").val("sa");
+            url = "../Ajax/SrcCodeManageAjax.ashx?Method=SaveSrcCodeManage&Mode="+_mode;
+        }
+
+        //拷贝添加
+        function copyAdd() {
+            var rowData = $('#dg').datagrid('getSelections');
+            if (rowData.length == 0) {
+                $.messager.alert('提示', '请选择要拷贝的项！', 'info');
+            }
+            else if (rowData.length > 1) {
+                $.messager.alert('提示', '只能选择一项进行拷贝！', 'info');
+            }
+            else {
+                _mode = "1";
+                var row = $('#dg').datagrid('getSelected');
+                openDialog();
+                $('#fm').form('load', row);
+                $('#CustomerName').val("");
+                url = "../Ajax/SrcCodeManageAjax.ashx?Method=SaveSrcCodeManage&Mode=" + _mode;
+            }
         }
 
         function edit() {
@@ -90,8 +110,12 @@
         }
 
         function openDialog() {
+            var title = "添加";
+            if (_mode == "2") {
+                title = "编辑";
+            }
             $("#dlg").show();
-            $("#dlg").attr("title", _mode == "1" ? "添加" : "编辑");
+            $("#dlg").attr("title", title);
             $("#dlg").dialog({
                 draggable: true,
                 resizable: false,
@@ -175,8 +199,8 @@
             });  
         }
 
-        function checkCstName() {
-            if ($("#CustomerName").val().trim() == "") return;
+        function checkCstName(obj) {
+            if ($.trim($("#CustomerName").val()) == "") return;
             $.ajax({
                 type: "POST",
                 dataType: "json",
@@ -185,6 +209,8 @@
                 success: function (data) {
                     if (data.Flag[0].Status == 1) {
                         $.messager.alert('提示', '客户名称已经存在!', 'info');
+                        //setTimeout(obj.focus(),100);
+                        obj.value = "";
                     }
                 },
                 error: function (data) {
@@ -205,7 +231,7 @@
                 $.ajax({
                     type: 'POST',
                     url: "../Ajax/SrcCodeManageAjax.ashx?Method=RegisterAndDownLoadReg",
-                    data: { dbName: rowData[0].ServerName, appName: rowData[0].ApplicationName,
+                    data: { dbName: rowData[0].DBName, appName: rowData[0].ApplicationName,
                         serverName: rowData[0].ServerName, userName: rowData[0].UserName,
                         saPassword: rowData[0].UserPwd, serverProt: rowData[0].ServerPort,
                         customerName: rowData[0].CustomerName, rnd: Math.random()
@@ -302,7 +328,7 @@
     <iframe id="ifrDown" src="../DownLoadFile.aspx" style="display: none;"></iframe>
     <table id="dg" fit="true">
     </table>
-    <div id="dlg" style="width: 530px; height: 400px; padding: 10px 20px;display:none;">
+    <div id="dlg" style="width: 540px; height: 450px; padding: 10px 20px;display:none;">
        <form id="fm" method="post" novalidate>  
         <table>
             <tr>
@@ -310,7 +336,7 @@
                     客户名称:
                 </td>
                 <td align="left">
-                    <input id="CustomerName" name="CustomerName" maxlength="20" style="width: 150px;" class="easyui-validatebox" required="true" onblur="checkCstName();" />
+                    <input id="CustomerName" name="CustomerName" maxlength="20" style="width: 150px;" class="easyui-validatebox" required="true" onblur="checkCstName(this);" />
                 </td>
                 <td align="right" style="width: 80px;">
                     区域:
@@ -374,7 +400,10 @@
                     密码:
                 </td>
                 <td align="left" colspan="3">
-                    <input id="UserPwd" name="UserPwd" maxlength="50" style="width: 150px;" />
+                      <select id="UserPwd" class="easyui-combobox" name="UserPwd" style="width:154px;">  
+                            <option value="95938">95938</option>  
+                            <option value="Mysoft123">Mysoft123</option>  
+                        </select> 
                 </td>
             </tr>
             <tr>
@@ -394,6 +423,7 @@
         <div style="margin-bottom: 5px">
             <a href="#" class="easyui-linkbutton" iconcls="icon-add" onclick="add()">新增</a>
             <a href="#" class="easyui-linkbutton" iconcls="icon-edit" onclick="edit()">编辑</a>
+            <a href="#" class="easyui-linkbutton" iconcls="icon-edit" onclick="copyAdd()">拷贝</a>
             <a href="#" class="easyui-linkbutton" iconcls="icon-cut" onclick="copyVss()">复制地址</a>
             <a href="#" class="easyui-linkbutton" iconcls="icon-save" onclick="downReg()">下载REG</a>
             <a href="#" class="easyui-linkbutton" iconcls="icon-remove" onclick="del()">删除</a>
