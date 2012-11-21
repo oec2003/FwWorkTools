@@ -3,45 +3,12 @@
  <%@ MasterType VirtualPath="~/Main.Master" %>
 
  <script type="text/javascript" src="../Scripts/jquery.blockUI.js"></script>
-    <link rel="stylesheet" href="../Scripts/jqwidgets/styles/jqx.base.css" type="text/css" />
-    <script type="text/javascript" src="../Scripts/jquery-1.8.1.min.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxdata.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxbuttons.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxlistbox.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxdropdownlist.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxmenu.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxgrid.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxgrid.pager.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxgrid.filter.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxgrid.sort.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxgrid.selection.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxnumberinput.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxwindow.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxpanel.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxcheckbox.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxcalendar.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/jqxdatetimeinput.js"></script>
-    <script type="text/javascript" src="../Scripts/jqwidgets/globalization/jquery.global.js"></script>
-    <script type="text/javascript" src="../Scripts/gettheme.js"></script>
-    <script type="text/javascript" src="generatedata.js"></script>
-    <script type="text/javascript" src="../Scripts/json2.js"></script>
-    <script type="text/javascript" src="../Scripts/boxy/jquery.boxy.js"></script>
-    <link type="text/css" rel="Stylesheet" href="../Scripts/boxy/boxy.css" />
-    <script type="text/javascript" src="../Scripts/jquery.blockUI.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Scripts/jqueryeasyui/themes/gray/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="../Scripts/jqueryeasyui/themes/icon.css" />
 
     <script type="text/javascript">
-        var _url = '/WT/AdminPortal/Ajax/VBSQLConvertAjax.ajax';
 
         $(document).ready(function () {
-            var theme = getTheme();
-
-            $("#btnClear").jqxButton({ width: 70, theme: theme });
-            $("#btnVbToSql").jqxButton({ width: 100, theme: theme });
-            $("#btnSqlToVb").jqxButton({ width: 100, theme: theme });
-            $("#btnCopy").jqxButton({ width: 70, theme: theme });
-
             $("#btnClear").click(function () {
                 $("#txtUp").val("");
                 $("#txtDown").val("");
@@ -52,10 +19,15 @@
                 $.ajax({
                     type: 'POST',
                     async: false,
-                    url: _url,
-                    data: { action: 'SqlToVb', Content: content, rnd: Math.random() },
+                    url: '../Ajax/VBSQLConvertAjax.ashx?Method=SqlToVb',
+                    data: { Content: content, rnd: Math.random() },
                     success: function (data) {
-                        $("#txtDown").val(data);
+                        if (data == "Error") {
+                            $.messager.alert('错误', '删除成功', 'error');
+                        }
+                        else {
+                            $("#txtDown").val(data);
+                        }
                     }
                 });
             });
@@ -65,10 +37,16 @@
                 $.ajax({
                     type: 'POST',
                     async: false,
-                    url: _url,
-                    data: { action: 'VbToSql', Content: content, rnd: Math.random() },
+                    url: '../Ajax/VBSQLConvertAjax.ashx?Method=VbToSql',
+                    data: { Content: content, rnd: Math.random() },
                     success: function (data) {
-                        $("#txtDown").val(data);
+                        if (data == "Error") {
+                            $.messager.alert('错误', '删除成功', 'error');
+                        }
+                        else {
+                            $("#txtDown").val(data);
+                        }
+                        
                     }
                 });
             });
@@ -102,10 +80,9 @@
       <asp:TextBox Wrap="false" runat="server" ClientIDMode="Static" ID="txtUp" TextMode="MultiLine" Height="200" Width="100%"  ></asp:TextBox>
  </div>
  <div class="divMid">
-      <input type="button" id="btnClear" value="清空" style="cursor:hand;"/>
-      <input type="button" id="btnSqlToVb" value="SQL 转 VB" style="cursor:hand;"/>
-      <input type="button" id="btnVbToSql" value="VB 转 SQL" style="cursor:hand;"/>
-      <%--<input type="button" id="btnCopy" value="复制" />--%>
+    <a href="#" id="btnClear" class="easyui-linkbutton" >清空</a>
+    <a href="#" id="btnSqlToVb" class="easyui-linkbutton" >SQL 转 VB</a>
+    <a href="#" id="btnVbToSql" class="easyui-linkbutton" >VB 转 SQL</a>
  </div>
  <div class="divDown">
     <asp:TextBox Wrap="false" runat="server"  ClientIDMode="Static" ID="txtDown" TextMode="MultiLine"   Height="200" Width="100%"  ></asp:TextBox>

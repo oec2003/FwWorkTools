@@ -161,7 +161,7 @@
                             data: { IDs: ids },
                             success: function (data) {
                                 if (data == "Success") {
-                                    $.messager.alert('提示', '删除成功');
+                                    $.messager.alert('提示', '删除成功','info');
                                     $("#dg").datagrid('reload');
                                 }
                                 else {
