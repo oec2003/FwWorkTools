@@ -272,7 +272,9 @@
     <Content Include="Scripts\Zclip\ZeroClipboard.swf" />
     <Content Include="SystemManage\MenuList.aspx" />
     <Content Include="UserControls\Menu.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ajax\FeedBackLogAjax.ashx.cs">

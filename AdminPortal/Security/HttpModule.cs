@@ -73,7 +73,6 @@ namespace FW.WT.AdminPortal.Security
             {
                 HttpContext context = application.Context;
 
-                string userName = "";
                 string getkeys = "";
                 //string sqlErrorPage = "~/";//转向的错误提示页面 
                 string keyvalue = "";
@@ -82,7 +81,7 @@ namespace FW.WT.AdminPortal.Security
                 string userIP = CommonRequest.GetIP().Trim();
 
                 if (context.Request.QueryString != null &&
-                    context.Request.FilePath != "/WT/AdminPortal/Ajax/VBSQLConvertAjax.ajax")
+                    context.Request.FilePath != "/Ajax/VBSQLConvertAjax.ashx")
                 {
                     for (int i = 0; i < context.Request.QueryString.Count; i++)
                     {
@@ -105,7 +104,7 @@ namespace FW.WT.AdminPortal.Security
 
 
                 if (context.Request.Form != null &&
-                    context.Request.FilePath != "/WT/AdminPortal/Ajax/VBSQLConvertAjax.ajax")
+                    context.Request.FilePath != "/Ajax/VBSQLConvertAjax.ashx")
                 {
                     for (int i = 0; i < context.Request.Form.Count; i++)
                     {
