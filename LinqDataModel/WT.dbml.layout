@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="WT">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.375" name="WT">
   <DataContextMoniker Name="/WTDataContext" />
   <nestedChildShapes>
     <classShape Id="e3817410-01c0-40b7-9323-febc5a349f3d" absoluteBounds="0.5, 0.5, 2, 1.9535852050781251">
@@ -24,6 +24,12 @@
       <DataClassMoniker Name="/WTDataContext/FeedBackLog" />
       <nestedChildShapes>
         <elementListCompartment Id="620995f2-ee40-42cd-ba58-47442f2efb9b" absoluteBounds="3.015, 4.585, 1.9700000000000002, 2.539703369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5895a264-7a3e-44cc-82b7-bda2a2ab1c91" absoluteBounds="0.5, 6.375, 2, 2.7176639811197916">
+      <DataClassMoniker Name="/WTDataContext/TypicalFunc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d90166f3-28bf-4fdb-ab70-f76430412a26" absoluteBounds="0.515, 6.835, 1.9700000000000002, 2.1576639811197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

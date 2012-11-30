@@ -5,7 +5,9 @@
  <script type="text/javascript" src="../Scripts/jquery.blockUI.js"></script>
     <link rel="stylesheet" type="text/css" href="../Scripts/jqueryeasyui/themes/gray/easyui.css" />
     <link rel="stylesheet" type="text/css" href="../Scripts/jqueryeasyui/themes/icon.css" />
-
+    <script type="text/javascript" src="../Scripts/jqueryeasyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jqueryeasyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jqueryeasyui/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {

@@ -54,4 +54,18 @@
       <Column Name="Wtyy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.TypicalFunc" Member="TypicalFuncs">
+    <Type Name="TypicalFunc">
+      <Column Name="TypicalFuncID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="CustomerArea" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TaskNo" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fzr" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FilePath" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

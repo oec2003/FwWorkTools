@@ -10,7 +10,7 @@
 namespace FW.WT.AdminPortal.CommonFuncManage {
     
     
-    public partial class FeedBackLogList {
+    public partial class TypicalFuncList {
         
         /// <summary>
         /// Master property.
