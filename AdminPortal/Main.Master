@@ -10,11 +10,11 @@
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jqueryeasyui/jquery.easyui.min.js")%>"></script>
     <script type="text/javascript" src="<%=ResolveUrl("~/Scripts/jqueryeasyui/locale/easyui-lang-zh_CN.js")%>"></script>
     <script type="text/javascript">
-      
+
         // 重定位页脚函数
         function repositionFooter() {
             var h = $(window).height();
-           
+
             $("#tdMenu").attr('height', h - 120)
         };
 
@@ -29,14 +29,27 @@
         // 页面加载的时候重定位页脚
         $(document).ready(repositionFooter);
     </script>
-
     <style type="text/css">
-    h1{ color:White; margin-left:10px; font-size:30px; font-family:微软雅黑;}
-    
-    #trFooter a:link{font-weight : bold ;text-decoration : none ;color : #fff ;}
-
+        h1
+        {
+            color: White;
+            margin-left: 10px;
+            font-size: 30px;
+            font-family: 微软雅黑;
+        }
+        
+        
+        a:link, a:visited
+        {
+            color: #FFffff;
+            text-decoration: underline;
+        }
+        a:hover, a:active
+        {
+            color: #ffffff;
+            text-decoration: none;
+        }
     </style>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -45,12 +58,13 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr align="left">
                 <td colspan="3" bgcolor="#3366CC" style="border-bottom: 2px solid #fff" height="50">
-                    <h1>工作辅助工具</h1>
+                    <h1>
+                        工作辅助工具</h1>
                 </td>
             </tr>
             <tr valign="top">
                 <!--左侧菜单-->
-                <td width="160px" height="500" id="tdMenu" style="background-color:#EBEBEB;">
+                <td width="160px" height="500" id="tdMenu" style="background-color: #EBEBEB;">
                     <asp:Literal runat="server" ID="litMenu"></asp:Literal>
                 </td>
                 <td width="20px">
@@ -65,7 +79,8 @@
             </tr>
             <tr align="center" bgcolor="#3366CC" id="trFooter">
                 <td height="25" colspan="3">
-                    <font color="#FFFFFF">CopyRight &copy;<font face="Arial, Helvetica, sans-serif">2012-2013&nbsp;&nbsp;<a href="http://oec2003.cnblogs.com" target="_blank" >http://oec2003.cnblogs.com</a></font></font>
+                    <font color="#FFFFFF">CopyRight &copy;<font face="Arial, Helvetica, sans-serif">2012-2013&nbsp;&nbsp;<a
+                       href="http://oec2003.cnblogs.com" target="_blank">http://oec2003.cnblogs.com</a></font></font>
                 </td>
             </tr>
         </table>
