@@ -97,6 +97,7 @@
     <Content Include="CommonFuncManage\AddressBooksList.aspx" />
     <Content Include="CommonFuncManage\FeedBackLogList.aspx" />
     <Content Include="CommonFuncManage\SrcCodeManageList.aspx" />
+    <Content Include="CommonFuncManage\TypicalFuncList.aspx" />
     <Content Include="CommonFuncManage\VBSQLConvert.aspx" />
     <Content Include="DownLoadFile.aspx" />
     <Content Include="Error.aspx" />
@@ -283,6 +284,9 @@
     <Compile Include="Ajax\SrcCodeManageAjax.ashx.cs">
       <DependentUpon>SrcCodeManageAjax.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Ajax\TypicalFuncAjax.ashx.cs">
+      <DependentUpon>TypicalFuncAjax.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Ajax\VBSQLConvertAjax.ashx.cs">
       <DependentUpon>VBSQLConvertAjax.ashx</DependentUpon>
     </Compile>
@@ -306,6 +310,13 @@
     </Compile>
     <Compile Include="CommonFuncManage\SrcCodeManageList.aspx.designer.cs">
       <DependentUpon>SrcCodeManageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\TypicalFuncList.aspx.cs">
+      <DependentUpon>TypicalFuncList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\TypicalFuncList.aspx.designer.cs">
+      <DependentUpon>TypicalFuncList.aspx</DependentUpon>
     </Compile>
     <Compile Include="CommonFuncManage\VBSQLConvert.aspx.cs">
       <DependentUpon>VBSQLConvert.aspx</DependentUpon>
@@ -540,6 +551,7 @@
     <Content Include="Ajax\FeedBackLogAjax.ashx" />
     <Content Include="Ajax\SrcCodeManageAjax.ashx" />
     <Content Include="Ajax\VBSQLConvertAjax.ashx" />
+    <Content Include="Ajax\TypicalFuncAjax.ashx" />
     <None Include="Scripts\jqueryeasyui\themes\gray\images\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

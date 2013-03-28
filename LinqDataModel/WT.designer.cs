@@ -42,6 +42,9 @@ namespace FW.WT.LinqDataModel
     partial void InsertFeedBackLog(FeedBackLog instance);
     partial void UpdateFeedBackLog(FeedBackLog instance);
     partial void DeleteFeedBackLog(FeedBackLog instance);
+    partial void InsertTypicalFunc(TypicalFunc instance);
+    partial void UpdateTypicalFunc(TypicalFunc instance);
+    partial void DeleteTypicalFunc(TypicalFunc instance);
     #endregion
 		
 		public WTDataContext() : 
@@ -103,6 +106,14 @@ namespace FW.WT.LinqDataModel
 			get
 			{
 				return this.GetTable<FeedBackLog>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TypicalFunc> TypicalFuncs
+		{
+			get
+			{
+				return this.GetTable<TypicalFunc>();
 			}
 		}
 	}
@@ -1146,6 +1157,284 @@ namespace FW.WT.LinqDataModel
 					this._Wtyy = value;
 					this.SendPropertyChanged("Wtyy");
 					this.OnWtyyChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TypicalFunc")]
+	public partial class TypicalFunc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TypicalFuncID;
+		
+		private string _CustomerName;
+		
+		private string _CustomerArea;
+		
+		private string _Title;
+		
+		private string _TaskNo;
+		
+		private string _Fzr;
+		
+		private string _Remark;
+		
+		private string _Url;
+		
+		private string _FileName;
+		
+		private string _FilePath;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTypicalFuncIDChanging(int value);
+    partial void OnTypicalFuncIDChanged();
+    partial void OnCustomerNameChanging(string value);
+    partial void OnCustomerNameChanged();
+    partial void OnCustomerAreaChanging(string value);
+    partial void OnCustomerAreaChanged();
+    partial void OnTitleChanging(string value);
+    partial void OnTitleChanged();
+    partial void OnTaskNoChanging(string value);
+    partial void OnTaskNoChanged();
+    partial void OnFzrChanging(string value);
+    partial void OnFzrChanged();
+    partial void OnRemarkChanging(string value);
+    partial void OnRemarkChanged();
+    partial void OnUrlChanging(string value);
+    partial void OnUrlChanged();
+    partial void OnFileNameChanging(string value);
+    partial void OnFileNameChanged();
+    partial void OnFilePathChanging(string value);
+    partial void OnFilePathChanged();
+    #endregion
+		
+		public TypicalFunc()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TypicalFuncID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TypicalFuncID
+		{
+			get
+			{
+				return this._TypicalFuncID;
+			}
+			set
+			{
+				if ((this._TypicalFuncID != value))
+				{
+					this.OnTypicalFuncIDChanging(value);
+					this.SendPropertyChanging();
+					this._TypicalFuncID = value;
+					this.SendPropertyChanged("TypicalFuncID");
+					this.OnTypicalFuncIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerName", DbType="NVarChar(20)")]
+		public string CustomerName
+		{
+			get
+			{
+				return this._CustomerName;
+			}
+			set
+			{
+				if ((this._CustomerName != value))
+				{
+					this.OnCustomerNameChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerName = value;
+					this.SendPropertyChanged("CustomerName");
+					this.OnCustomerNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CustomerArea", DbType="NVarChar(20)")]
+		public string CustomerArea
+		{
+			get
+			{
+				return this._CustomerArea;
+			}
+			set
+			{
+				if ((this._CustomerArea != value))
+				{
+					this.OnCustomerAreaChanging(value);
+					this.SendPropertyChanging();
+					this._CustomerArea = value;
+					this.SendPropertyChanged("CustomerArea");
+					this.OnCustomerAreaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100)")]
+		public string Title
+		{
+			get
+			{
+				return this._Title;
+			}
+			set
+			{
+				if ((this._Title != value))
+				{
+					this.OnTitleChanging(value);
+					this.SendPropertyChanging();
+					this._Title = value;
+					this.SendPropertyChanged("Title");
+					this.OnTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskNo", DbType="NVarChar(20)")]
+		public string TaskNo
+		{
+			get
+			{
+				return this._TaskNo;
+			}
+			set
+			{
+				if ((this._TaskNo != value))
+				{
+					this.OnTaskNoChanging(value);
+					this.SendPropertyChanging();
+					this._TaskNo = value;
+					this.SendPropertyChanged("TaskNo");
+					this.OnTaskNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fzr", DbType="NVarChar(20)")]
+		public string Fzr
+		{
+			get
+			{
+				return this._Fzr;
+			}
+			set
+			{
+				if ((this._Fzr != value))
+				{
+					this.OnFzrChanging(value);
+					this.SendPropertyChanging();
+					this._Fzr = value;
+					this.SendPropertyChanged("Fzr");
+					this.OnFzrChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Remark", DbType="NVarChar(MAX)")]
+		public string Remark
+		{
+			get
+			{
+				return this._Remark;
+			}
+			set
+			{
+				if ((this._Remark != value))
+				{
+					this.OnRemarkChanging(value);
+					this.SendPropertyChanging();
+					this._Remark = value;
+					this.SendPropertyChanged("Remark");
+					this.OnRemarkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Url", DbType="NVarChar(100)")]
+		public string Url
+		{
+			get
+			{
+				return this._Url;
+			}
+			set
+			{
+				if ((this._Url != value))
+				{
+					this.OnUrlChanging(value);
+					this.SendPropertyChanging();
+					this._Url = value;
+					this.SendPropertyChanged("Url");
+					this.OnUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FileName", DbType="NVarChar(50)")]
+		public string FileName
+		{
+			get
+			{
+				return this._FileName;
+			}
+			set
+			{
+				if ((this._FileName != value))
+				{
+					this.OnFileNameChanging(value);
+					this.SendPropertyChanging();
+					this._FileName = value;
+					this.SendPropertyChanged("FileName");
+					this.OnFileNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FilePath", DbType="NVarChar(100)")]
+		public string FilePath
+		{
+			get
+			{
+				return this._FilePath;
+			}
+			set
+			{
+				if ((this._FilePath != value))
+				{
+					this.OnFilePathChanging(value);
+					this.SendPropertyChanging();
+					this._FilePath = value;
+					this.SendPropertyChanged("FilePath");
+					this.OnFilePathChanged();
 				}
 			}
 		}
