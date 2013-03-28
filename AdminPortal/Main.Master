@@ -32,6 +32,9 @@
 
     <style type="text/css">
     h1{ color:White; margin-left:10px; font-size:30px; font-family:微软雅黑;}
+    
+    #trFooter a:link{font-weight : bold ;text-decoration : none ;color : #fff ;}
+
     </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -60,9 +63,9 @@
                     </asp:ContentPlaceHolder>
                 </td>
             </tr>
-            <tr align="center" bgcolor="#3366CC">
+            <tr align="center" bgcolor="#3366CC" id="trFooter">
                 <td height="25" colspan="3">
-                    <font color="#FFFFFF">CopyRight &copy;<font face="Arial, Helvetica, sans-serif">2012&nbsp;&nbsp;http://oec2003.cnblogs.com</font></font>
+                    <font color="#FFFFFF">CopyRight &copy;<font face="Arial, Helvetica, sans-serif">2012-2013&nbsp;&nbsp;<a href="http://oec2003.cnblogs.com" target="_blank" >http://oec2003.cnblogs.com</a></font></font>
                 </td>
             </tr>
         </table>
