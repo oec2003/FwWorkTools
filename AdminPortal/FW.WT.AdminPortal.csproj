@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7EDFA348-B24D-4E45-824C-BE5554073E07}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FW.WT.AdminPortal</RootNamespace>
+    <AssemblyName>FW.WT.AdminPortal</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\FW.TrainingManage.AdminPortal.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\FW.WT.AdminPortal.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager, Version=7.3.2.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommonFuncManage\AddressBooksList.aspx" />
+    <Content Include="CommonFuncManage\FeedBackLogList.aspx" />
+    <Content Include="CommonFuncManage\SrcCodeManageList.aspx" />
+    <Content Include="CommonFuncManage\TypicalFuncList.aspx" />
+    <Content Include="CommonFuncManage\VBSQLConvert.aspx" />
+    <Content Include="DownLoadFile.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Index.aspx" />
+    <Content Include="Lib\Newtonsoft.Json.dll" />
+    <Content Include="Scripts\boxy\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\format.js" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jqueryeasyui\easyloader.js" />
+    <Content Include="Scripts\jqueryeasyui\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jqueryeasyui\jquery.easyui.min.js" />
+    <Content Include="Scripts\jqueryeasyui\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.accordion.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.calendar.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combo.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combobox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combogrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.combotree.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.datagrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.datebox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.datetimebox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.dialog.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.draggable.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.droppable.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.form.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.layout.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.linkbutton.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.menu.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.menubutton.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.messager.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.numberbox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.numberspinner.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.pagination.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.panel.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.parser.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.progressbar.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.propertygrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.resizable.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.searchbox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.slider.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.spinner.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.splitbutton.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.tabs.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.timespinner.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.tree.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.treegrid.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.validatebox.js" />
+    <Content Include="Scripts\jqueryeasyui\plugins\jquery.window.js" />
+    <Content Include="Scripts\jqueryeasyui\src\easyloader.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.accordion.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.calendar.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.combobox.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.datebox.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.draggable.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.droppable.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.form.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.linkbutton.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.menu.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.parser.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.progressbar.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.propertygrid.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.resizable.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.slider.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.tabs.js" />
+    <Content Include="Scripts\jqueryeasyui\src\jquery.window.js" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\accordion.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\calendar.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\combo.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\combobox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\datagrid.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\datebox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\dialog.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\easyui.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\accordion_collapse.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\accordion_expand.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\blank.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\button_a_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\button_plain_hover.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\button_span_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_nextmonth.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_nextyear.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_prevmonth.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\calendar_prevyear.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\combo_arrow.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_header_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_row_collapse.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_row_expand.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_sort_asc.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_sort_desc.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datagrid_title_bg.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\layout_arrows.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_downarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_rightarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_sep.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\menu_split_downarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_error.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_info.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_question.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\messager_warning.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_first.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_last.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_load.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_loading.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_next.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\pagination_prev.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\panel_loading.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\panel_title.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\panel_tools.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\searchbox_button.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\slider_handle.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\spinner_arrow_down.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\spinner_arrow_up.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_close.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_enabled.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_leftarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tabs_rightarrow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_arrows.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_checkbox_0.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_checkbox_1.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_checkbox_2.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_dnd_no.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_dnd_yes.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_elbow.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_file.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_folder.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_folder_open.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\tree_loading.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\validatebox_pointer.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\layout.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\linkbutton.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\menu.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\menubutton.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\messager.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\pagination.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\panel.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\progressbar.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\propertygrid.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\searchbox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\slider.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\spinner.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\splitbutton.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\tabs.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\tree.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\validatebox.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\gray\window.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\icon.css" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\back.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\blank.gif" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\cancel.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\cut.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\edit_add.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\edit_remove.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\filesave.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\help.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\mini_add.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\mini_edit.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\mini_refresh.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\no.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\ok.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\pencil.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\print.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\redo.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\reload.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\search.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\sum.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\tip.png" />
+    <Content Include="Scripts\jqueryeasyui\themes\icons\undo.png" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\Zclip\jquery.zclip.js" />
+    <Content Include="Scripts\Zclip\ZeroClipboard.swf" />
+    <Content Include="SystemManage\MenuList.aspx" />
+    <Content Include="UserControls\Menu.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ajax\FeedBackLogAjax.ashx.cs">
+      <DependentUpon>FeedBackLogAjax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\SrcCodeManageAjax.ashx.cs">
+      <DependentUpon>SrcCodeManageAjax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\TypicalFuncAjax.ashx.cs">
+      <DependentUpon>TypicalFuncAjax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Ajax\VBSQLConvertAjax.ashx.cs">
+      <DependentUpon>VBSQLConvertAjax.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\AddressBooksList.aspx.cs">
+      <DependentUpon>AddressBooksList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\AddressBooksList.aspx.designer.cs">
+      <DependentUpon>AddressBooksList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\FeedBackLogList.aspx.cs">
+      <DependentUpon>FeedBackLogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\FeedBackLogList.aspx.designer.cs">
+      <DependentUpon>FeedBackLogList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\SrcCodeManageList.aspx.cs">
+      <DependentUpon>SrcCodeManageList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\SrcCodeManageList.aspx.designer.cs">
+      <DependentUpon>SrcCodeManageList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\TypicalFuncList.aspx.cs">
+      <DependentUpon>TypicalFuncList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\TypicalFuncList.aspx.designer.cs">
+      <DependentUpon>TypicalFuncList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFuncManage\VBSQLConvert.aspx.cs">
+      <DependentUpon>VBSQLConvert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonFuncManage\VBSQLConvert.aspx.designer.cs">
+      <DependentUpon>VBSQLConvert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\JsonConvert.cs" />
+    <Compile Include="Common\LoginInfo.cs" />
+    <Compile Include="Common\QueryBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownLoadFile.aspx.cs">
+      <DependentUpon>DownLoadFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownLoadFile.aspx.designer.cs">
+      <DependentUpon>DownLoadFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorInfo.aspx.cs">
+      <DependentUpon>ErrorInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorInfo.aspx.designer.cs">
+      <DependentUpon>ErrorInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\HttpModule.cs" />
+    <Compile Include="SystemManage\MenuList.aspx.cs">
+      <DependentUpon>MenuList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemManage\MenuList.aspx.designer.cs">
+      <DependentUpon>MenuList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\aaa.aspx.cs">
+      <DependentUpon>aaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\aaa.aspx.designer.cs">
+      <DependentUpon>aaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\logo02.gif" />
+    <Content Include="Images\top_bg01.jpg" />
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\Default.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Browsers\Others.browser">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ErrorInfo.aspx" />
+    <Content Include="Images\add.gif" />
+    <Content Include="Images\adddel.jpg" />
+    <Content Include="Images\addnew.gif" />
+    <Content Include="Images\addnew.jpg" />
+    <Content Include="Images\aleft.gif" />
+    <Content Include="Images\aright.gif" />
+    <Content Include="Images\aspmkrlogo.gif" />
+    <Content Include="Images\backup.gif" />
+    <Content Include="Images\bg.gif" />
+    <Content Include="Images\bnradd.gif" />
+    <Content Include="Images\bnrdelete.gif" />
+    <Content Include="Images\bnredit.gif" />
+    <Content Include="Images\bnrlist.gif" />
+    <Content Include="Images\bnrsrch.gif" />
+    <Content Include="Images\bnrview.gif" />
+    <Content Include="Images\bold.gif" />
+    <Content Include="Images\btn-010.gif" />
+    <Content Include="Images\btn-015.gif" />
+    <Content Include="Images\bullist.gif" />
+    <Content Include="Images\center.gif" />
+    <Content Include="Images\close.gif" />
+    <Content Include="Images\close002.gif" />
+    <Content Include="Images\copy.gif" />
+    <Content Include="Images\cut.gif" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\divider.gif" />
+    <Content Include="Images\drop1.gif" />
+    <Content Include="Images\drop2.gif" />
+    <Content Include="Images\d_wd.gif" />
+    <Content Include="Images\d_yd.gif" />
+    <Content Include="Images\edit.gif" />
+    <Content Include="Images\error.gif" />
+    <Content Include="Images\ew_calendar.gif" />
+    <Content Include="Images\fgcolor.gif" />
+    <Content Include="Images\first.gif" />
+    <Content Include="Images\firstdisab.gif" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\hr.gif" />
+    <Content Include="Images\img.gif" />
+    <Content Include="Images\indent.gif" />
+    <Content Include="Images\infoicon.gif" />
+    <Content Include="Images\italic.gif" />
+    <Content Include="Images\last.gif" />
+    <Content Include="Images\lastdisab.gif" />
+    <Content Include="Images\lbtn.jpg" />
+    <Content Include="Images\left1.gif" />
+    <Content Include="Images\left2.gif" />
+    <Content Include="Images\login.jpg" />
+    <Content Include="Images\Login.swf" />
+    <Content Include="Images\login01.jpg" />
+    <Content Include="Images\login02.jpg" />
+    <Content Include="Images\login_logo.gif" />
+    <Content Include="Images\logo1.jpg" />
+    <Content Include="Images\main_banner03.gif" />
+    <Content Include="Images\men01.gif" />
+    <Content Include="Images\men02.gif" />
+    <Content Include="Images\men03.gif" />
+    <Content Include="Images\men04.gif" />
+    <Content Include="Images\men05.gif" />
+    <Content Include="Images\men_bg01.gif" />
+    <Content Include="Images\men_bg02.gif" />
+    <Content Include="Images\men_bg03.gif" />
+    <Content Include="Images\men_bg04.gif" />
+    <Content Include="Images\nav_arrow.gif" />
+    <Content Include="Images\nbtn.jpg" />
+    <Content Include="Images\next.gif" />
+    <Content Include="Images\nextdisab.gif" />
+    <Content Include="Images\numlist.gif" />
+    <Content Include="Images\outdent.gif" />
+    <Content Include="Images\paste.gif" />
+    <Content Include="Images\prev.gif" />
+    <Content Include="Images\prevdisab.gif" />
+    <Content Include="Images\redo.gif" />
+    <Content Include="Images\right1.gif" />
+    <Content Include="Images\right2.gif" />
+    <Content Include="Images\sbtn.jpg" />
+    <Content Include="Images\table.gif" />
+    <Content Include="Images\underline.gif" />
+    <Content Include="Images\undo.gif" />
+    <Content Include="Images\view.gif" />
+    <Content Include="Lib\AspNetPager.dll" />
+    <Content Include="Lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Scripts\boxy\images\boxy-ne.png" />
+    <Content Include="Scripts\boxy\images\boxy-nw.png" />
+    <Content Include="Scripts\boxy\images\boxy-se.png" />
+    <Content Include="Scripts\boxy\images\boxy-sw.png" />
+    <Content Include="Scripts\boxy\jquery-1.4.1.js" />
+    <Content Include="Scripts\boxy\jquery.boxy.js" />
+    <Content Include="Scripts\boxy\boxy.css" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Test\boxy\a.htm" />
+    <Content Include="Test\aaa.aspx" />
+    <Content Include="Test\boxy\images\boxy-ne.png" />
+    <Content Include="Test\boxy\images\boxy-nw.png" />
+    <Content Include="Test\boxy\images\boxy-se.png" />
+    <Content Include="Test\boxy\images\boxy-sw.png" />
+    <Content Include="Test\boxy\javascripts\jquery-1.4.1.js" />
+    <Content Include="Test\boxy\javascripts\jquery.boxy.js" />
+    <Content Include="Test\boxy\stylesheets\boxy.css" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\FW.WT.BLL.csproj">
+      <Project>{3E91556C-A024-40B0-91BC-A536F689A378}</Project>
+      <Name>FW.WT.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\FW.CommonFunction.csproj">
+      <Project>{D5BC8A0B-26F8-44D4-8051-5E37421AA7B7}</Project>
+      <Name>FW.CommonFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinqDataModel\FW.WT.LinqDataModel.csproj">
+      <Project>{90A98521-5842-4639-8738-F63D494CBC27}</Project>
+      <Name>FW.WT.LinqDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinqToSqlServerDAL\FW.WT.LinqToSqlServerDAL.csproj">
+      <Project>{D4169977-D8B2-4EA1-9444-EF66E17A6F58}</Project>
+      <Name>FW.WT.LinqToSqlServerDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ajax\FeedBackLogAjax.ashx" />
+    <Content Include="Ajax\SrcCodeManageAjax.ashx" />
+    <Content Include="Ajax\VBSQLConvertAjax.ashx" />
+    <Content Include="Ajax\TypicalFuncAjax.ashx" />
+    <None Include="Scripts\jqueryeasyui\themes\gray\images\Thumbs.db" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8099</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
