@@ -5,15 +5,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{F820F4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6C630EF9-BA97-4AAD-9D77-B47B4DEC0D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPortal", "AdminPortal\AdminPortal.csproj", "{7EDFA348-B24D-4E45-824C-BE5554073E07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FW.WT.AdminPortal", "AdminPortal\FW.WT.AdminPortal.csproj", "{7EDFA348-B24D-4E45-824C-BE5554073E07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFunction", "Common\CommonFunction.csproj", "{D5BC8A0B-26F8-44D4-8051-5E37421AA7B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FW.CommonFunction", "Common\FW.CommonFunction.csproj", "{D5BC8A0B-26F8-44D4-8051-5E37421AA7B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqDataModel", "LinqDataModel\LinqDataModel.csproj", "{90A98521-5842-4639-8738-F63D494CBC27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FW.WT.LinqDataModel", "LinqDataModel\FW.WT.LinqDataModel.csproj", "{90A98521-5842-4639-8738-F63D494CBC27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToSqlServerDAL", "LinqToSqlServerDAL\LinqToSqlServerDAL.csproj", "{D4169977-D8B2-4EA1-9444-EF66E17A6F58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FW.WT.LinqToSqlServerDAL", "LinqToSqlServerDAL\FW.WT.LinqToSqlServerDAL.csproj", "{D4169977-D8B2-4EA1-9444-EF66E17A6F58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{3E91556C-A024-40B0-91BC-A536F689A378}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FW.WT.BLL", "BLL\FW.WT.BLL.csproj", "{3E91556C-A024-40B0-91BC-A536F689A378}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
