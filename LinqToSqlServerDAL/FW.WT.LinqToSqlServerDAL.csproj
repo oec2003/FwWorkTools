@@ -72,12 +72,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressBookDAL.cs" />
+    <Compile Include="CodeLibDAL.cs" />
+    <Compile Include="CodeLibRelationTagDAL.cs" />
     <Compile Include="FeedBackLogDAL.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="MenuDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="SrcCodeManageDAL.cs" />
+    <Compile Include="TagDAL.cs" />
     <Compile Include="TypicalFuncDAL.cs" />
   </ItemGroup>
   <ItemGroup>

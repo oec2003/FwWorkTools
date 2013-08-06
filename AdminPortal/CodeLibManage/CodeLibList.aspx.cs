@@ -11,7 +11,9 @@ namespace FW.WT.AdminPortal.CodeLibManage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Master.MenuID = 1050;
         }
+
+
     }
 }

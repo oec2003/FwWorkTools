@@ -70,7 +70,7 @@
                 <td width="20px">
                 </td>
                 <td>
-                    <div class="nav">
+                    <div class="mainnav">
                         <asp:Literal runat="server" ID="litNav"></asp:Literal>
                     </div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">

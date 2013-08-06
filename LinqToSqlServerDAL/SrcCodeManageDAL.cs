@@ -30,9 +30,9 @@ namespace FW.WT.LinqToSqlServerDAL
 
         public IQueryable<SrcCodeManage> GetSource()
         {
-            IQueryable<SrcCodeManage> addressBook = from c in _dataContext.SrcCodeManages
+            IQueryable<SrcCodeManage> srcCodeManage = from c in _dataContext.SrcCodeManages
                                         select c;
-            return addressBook;
+            return srcCodeManage;
         }
     }
 }
